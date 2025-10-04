@@ -1,10 +1,11 @@
-/* Basic reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Org chart container */
 #org-chart {
   display: flex;
   justify-content: center;
@@ -14,7 +15,6 @@
 #org-chart ul {
   padding-top: 20px;
   position: relative;
-  transition: all 0.3s;
 }
 
 #org-chart li {
@@ -43,13 +43,11 @@
   border-left: 2px solid #ccc;
 }
 
-/* Remove lines for root */
 #org-chart li:only-child::before,
 #org-chart li:only-child::after {
   display: none;
 }
 
-/* Vertical connector line */
 #org-chart li > ul::before {
   content: '';
   position: absolute;
@@ -66,16 +64,17 @@
   padding: 10px;
   border-radius: 10px;
   display: inline-block;
-  transition: transform 0.3s, box-shadow 0.3s;
   background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
+/* Circular photo */
 .person img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   object-fit: cover;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 /* Hover effect */
@@ -85,5 +84,5 @@
 }
 
 .person:hover img {
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
