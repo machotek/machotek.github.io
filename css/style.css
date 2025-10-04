@@ -9,6 +9,10 @@ header {
   color: #fff;
   padding: 15px;
   text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
 }
 
 header nav a {
@@ -37,24 +41,13 @@ footer {
   overflow-x: auto;
   gap: 10px;
   padding: 10px 0;
+  scroll-behavior: smooth;
 }
 
 .photo-carousel img {
   height: 200px;
   border-radius: 8px;
-}
-.photo-carousel {
-  display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  padding: 10px 0;
-  scroll-behavior: smooth; /* Smooth scroll */
-}
-
-.photo-carousel img {
-  height: 200px;
-  border-radius: 8px;
-  cursor: pointer; /* indicate clickable */
+  cursor: pointer;
 }
 
 /* Lightbox Styles */
@@ -98,12 +91,87 @@ footer {
 
 /* Hover enlarge effect for links */
 a {
-  transition: transform 0.2s ease, color 0.2s ease; /* smooth animation */
-  display: inline-block; /* needed for transform */
+  transition: transform 0.2s ease, color 0.2s ease;
+  display: inline-block;
 }
 
 a:hover {
-  transform: scale(1.1); /* enlarge slightly */
-  color: #FFD700; /* optional: change color on hover */
-  text-decoration: none; /* optional: remove underline on hover */
+  transform: scale(1.1);
+  color: #FFD700;
+  text-decoration: none;
+}
+
+/* --- Header layout enhancements --- */
+.header-left,
+.header-center,
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
+  flex: 0 0 auto;
+}
+
+.altamedica-logo {
+  height: 60px;
+  margin-right: 15px;
+}
+
+.header-center {
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+}
+
+.macho-logo {
+  height: 50px;
+  display: block;
+  margin: 0 auto 5px auto;
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #fff;
+}
+
+.header-nav {
+  flex: 0 0 auto;
+  gap: 15px;
+}
+
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-left {
+    margin-bottom: 10px;
+  }
+
+  .header-nav {
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
 }
