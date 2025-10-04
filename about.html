@@ -5,6 +5,7 @@
   <title>About Us | Machotech</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
+  <script src="js/orgchart.js" defer></script>
 </head>
 <body>
 <!-- Header placeholder -->
@@ -12,15 +13,44 @@
 
   <main>
     <section class="team-members">
-      <h2>Our Team</h2>
-      <div class="member">
-        <h3>Jane Doe</h3>
-        <p>Project Lead</p>
-      </div>
-      <div class="member">
-        <h3>John Smith</h3>
-        <p>Software Engineer</p>
-      </div>
+<div id="org-chart">
+    <ul>
+      <li>
+        <div class="person">
+          <img src="photos/orgchart/head.jpg" alt="HEAD">
+          <p>Rey<br>Department Head</p>
+        </div>
+        <ul>
+          <li>
+            <div class="person">
+              <img src="photos/orgchart/supervisor.jpg" alt="SUPERVISOR">
+              <p>Joanna<br>Supervisor</p>
+            </div>
+            <ul>
+              <li>
+                <div class="person">
+                  <img src="photos/orgchart/sa.jpg" alt="SERVICE ASSISTANT">
+              <p>Karroleine<br>Service Assistant</p>
+                </div>
+              </li>
+              <li>
+                <div class="person">
+                  <img src="photos/orgchart/ps.jpg" alt="PRODUCT SPECIALIST">
+              <p>Sophia<br>Product Specialist</p>
+                </div>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <div class="person">
+              <img src="photos/orgchart/engr1.jpg" alt="Engineer">
+              <p>Dominic<br>Engineer</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
       <!-- Add more members as needed -->
     </section>
   </main>

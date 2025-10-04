@@ -1,0 +1,89 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#org-chart {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+#org-chart ul {
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+#org-chart li {
+  list-style-type: none;
+  text-align: center;
+  position: relative;
+  padding: 20px 5px 0 5px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* Connector lines */
+#org-chart li::before, #org-chart li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 2px solid #ccc;
+  width: 50%;
+  height: 20px;
+}
+
+#org-chart li::after {
+  right: auto;
+  left: 50%;
+  border-left: 2px solid #ccc;
+}
+
+/* Remove lines for root */
+#org-chart li:only-child::before,
+#org-chart li:only-child::after {
+  display: none;
+}
+
+/* Vertical connector line */
+#org-chart li > ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 2px solid #ccc;
+  width: 0;
+  height: 20px;
+}
+
+/* Person box */
+.person {
+  border: 2px solid #ccc;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
+}
+
+.person img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+/* Hover effect */
+.person:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.person:hover img {
+  transform: scale(1.1);
+}
