@@ -1,45 +1,38 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Header */
+/* --- Header --- */
 .site-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #333;
-  color: orange;
+  background: linear-gradient(90deg, #a3e7e4, #33cccc); /* gradient background */
+  color: white;
   padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-/* Left logo */
+/* --- Left Logo --- */
 .header-left img.altamedica-logo {
   height: 50px;
 }
 
-/* Center logo + text */
+/* --- Center Logo + Text --- */
 .header-center {
   display: flex;
-  flex-direction: column; /* stack logo and text vertically */
+  flex-direction: column; /* stack logo and text */
   align-items: center;    /* center horizontally */
-  text-align: center;     /* center text itself */
+  text-align: center;
 }
 
 .macho-logo {
-  height: 50px;          /* adjust as needed */
-  margin-bottom: 10px;   /* space between logo and text */
+  height: 50px;
+  margin-bottom: 10px;
 }
 
 .header-text h1 {
   margin: 0;
   font-size: 1.5em;
-  color: #fff;           /* or any color matching your theme */
+  color: #fff;
 }
 
 .header-text p {
@@ -48,9 +41,7 @@
   color: #fff;
 }
 
-}
-
-/* Navigation */
+/* --- Navigation --- */
 .header-nav {
   display: flex;
   gap: 15px;
@@ -64,10 +55,10 @@
 }
 
 .header-nav a:hover {
-  color: #f39c12;
+  color: #FFD700; /* golden hover effect */
 }
 
-/* Right section: contact + CTA */
+/* --- Right Section: Contact + CTA --- */
 .header-right {
   display: flex;
   flex-direction: column;
@@ -80,8 +71,8 @@
 }
 
 .header-right .cta-button {
-  background-color: #f39c12;
-  color: white;
+  background-color: #FFD700;
+  color: #333;
   padding: 5px 15px;
   text-decoration: none;
   border-radius: 5px;
@@ -89,7 +80,7 @@
   margin-top: 5px;
 }
 
-/* Hamburger menu (mobile) */
+/* --- Hamburger Menu (Mobile) --- */
 .hamburger {
   display: none;
   font-size: 24px;
@@ -97,11 +88,12 @@
   color: white;
 }
 
-/* Responsive */
+/* --- Responsive --- */
 @media (max-width: 992px) {
   .site-header {
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    text-align: center;
   }
 
   .header-nav {
@@ -117,7 +109,7 @@
   .header-right {
     width: 100%;
     margin-top: 10px;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .hamburger {
