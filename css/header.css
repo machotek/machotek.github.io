@@ -1,0 +1,120 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Left logo */
+.header-left img.altamedica-logo {
+  height: 50px;
+}
+
+/* Center logo + text */
+.header-center {
+  display: flex;
+  align-items: center;
+}
+
+.header-center img.macho-logo {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.header-text h1 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.header-text p {
+  font-size: 12px;
+  color: #ddd;
+}
+
+/* Navigation */
+.header-nav {
+  display: flex;
+  gap: 15px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.header-nav a:hover {
+  color: #f39c12;
+}
+
+/* Right section: contact + CTA */
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.header-right .contact-info {
+  text-align: right;
+  font-size: 12px;
+}
+
+.header-right .cta-button {
+  background-color: #f39c12;
+  color: white;
+  padding: 5px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+/* Hamburger menu (mobile) */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .site-header {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    width: 100%;
+    display: none; /* hidden initially */
+  }
+
+  .header-nav.active {
+    display: flex;
+  }
+
+  .header-right {
+    width: 100%;
+    margin-top: 10px;
+    align-items: flex-start;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
