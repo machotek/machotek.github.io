@@ -1,6 +1,13 @@
-// Collapsible toggle script with icons
 document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".brand-docs h3").forEach(header => {
+  // Toggle brands
+  document.querySelectorAll(".brand-docs > h4").forEach(header => {
+    header.addEventListener("click", () => {
+      header.parentElement.classList.toggle("active");
+    });
+  });
+
+  // Toggle classifications
+  document.querySelectorAll(".doc-category > h3").forEach(header => {
     header.addEventListener("click", () => {
       header.parentElement.classList.toggle("active");
     });

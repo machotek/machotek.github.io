@@ -1,6 +1,6 @@
-/* Collapsible Documents Styles */
-
-.brand-docs h3 {
+/* Collapsible headers */
+.brand-docs h4,
+.doc-category h3 {
   cursor: pointer;
   background-color: #f0f0f0;
   padding: 10px;
@@ -12,20 +12,23 @@
   justify-content: space-between;
 }
 
-.brand-docs h3:hover {
+.brand-docs h4:hover,
+.doc-category h3:hover {
   background-color: #ddd;
 }
 
-/* Plus/Minus icon */
+/* Icon */
 .toggle-icon {
   font-weight: bold;
   margin-left: 10px;
 }
 
+/* Collapsible sections */
+.brand-docs .doc-category,
 .brand-docs ul {
+  display: none;
   margin: 0;
   padding: 0 20px;
-  display: none; /* hidden by default */
 }
 
 .brand-docs ul li {
@@ -33,14 +36,26 @@
   margin: 5px 0;
 }
 
-.brand-docs.active ul {
-  display: block; /* show when active */
+/* Expanded states */
+.brand-docs.active .doc-category {
+  display: block; /* show categories when brand expands */
 }
 
-.brand-docs.active .toggle-icon::before {
-  content: "–"; /* minus when open */
+.doc-category.active ul {
+  display: block; /* show docs when classification expands */
 }
 
-.brand-docs:not(.active) .toggle-icon::before {
-  content: "+"; /* plus when closed */
+/* Plus/minus icons */
+.brand-docs.active > h4 .toggle-icon::before {
+  content: "–";
+}
+.brand-docs:not(.active) > h4 .toggle-icon::before {
+  content: "+";
+}
+
+.doc-category.active > h3 .toggle-icon::before {
+  content: "–";
+}
+.doc-category:not(.active) > h3 .toggle-icon::before {
+  content: "+";
 }
