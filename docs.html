@@ -4,25 +4,58 @@
   <meta charset="UTF-8">
   <title>Team Docs | Machotech</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/docs.css"> <!-- new stylesheet for collapsible docs -->
   <script src="js/main.js" defer></script>
+  <script src="js/docs.js" defer></script> <!-- new JS for collapsible docs -->
 </head>
 <body>
- <!-- Header placeholder -->
+  <!-- Header placeholder -->
   <div id="header-placeholder"></div>
   
   <main>
     <section class="docs-list">
       <h2>Available Documents</h2>
-      <ul>
-        <li><a href="docs/guide1.pdf" target="_blank">Guide 1</a></li>
-        <li><a href="docs/report1.pdf" target="_blank">Report 1</a></li>
-        <li><a href="docs/manual1.pdf" target="_blank">Manual 1</a></li>
-        <!-- Add more as needed -->
-      </ul>
+
+      <!-- Brand 1 -->
+      <div class="brand-docs">
+        <h3>
+          Brand A
+          <span class="toggle-icon"></span>
+        </h3>
+        <ul>
+          <li><a href="docs/brandA_guide.pdf" target="_blank">Brand A Guide</a></li>
+          <li><a href="docs/brandA_report.pdf" target="_blank">Brand A Report</a></li>
+        </ul>
+      </div>
+
+      <!-- Brand 2 -->
+      <div class="brand-docs">
+        <h3>
+          Brand B
+          <span class="toggle-icon"></span>
+        </h3>
+        <ul>
+          <li><a href="docs/brandB_manual.pdf" target="_blank">Brand B Manual</a></li>
+          <li><a href="docs/brandB_specs.pdf" target="_blank">Brand B Specs</a></li>
+        </ul>
+      </div>
+
+      <!-- Brand 3 -->
+      <div class="brand-docs">
+        <h3>
+          Brand C
+          <span class="toggle-icon"></span>
+        </h3>
+        <ul>
+          <li><a href="docs/brandC_whitepaper.pdf" target="_blank">Brand C Whitepaper</a></li>
+          <li><a href="docs/brandC_brochure.pdf" target="_blank">Brand C Brochure</a></li>
+        </ul>
+      </div>
+
     </section>
   </main>
 
-    <!-- Footer placeholder -->
+  <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 </body>
 </html>
