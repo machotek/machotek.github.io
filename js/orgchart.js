@@ -1,14 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const cards = document.querySelectorAll('.card');
   
+  // Hover animation
   cards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      card.classList.add('hovered');
-    });
-
-    card.addEventListener('mouseleave', () => {
-      card.classList.remove('hovered');
-    });
+    card.addEventListener('mouseenter', () => card.classList.add('hovered'));
+    card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
   });
 
   // Ensure all members on the same tier display beside each other
@@ -17,6 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     row.style.display = 'flex';
     row.style.flexWrap = 'nowrap';
     row.style.justifyContent = 'center';
-    row.style.gap = '20px';
+    row.style.gap = '28px';
   });
 });

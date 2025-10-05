@@ -10,118 +10,103 @@
   <link rel="stylesheet" href="css/orgchart1.css"> <!-- Org chart specific styles -->
 
   <!-- Scripts -->
-  <script src="js/main.js" defer></script> <!-- Handles header/footer -->
-  <script src="js/orgchart.js" defer></script> <!-- Optional org chart logic -->
+  <script src="js/main.js" defer></script> <!-- Header/Footer loader -->
+  <script src="js/orgchart.js" defer></script> <!-- Org chart logic -->
 </head>
 
 <body>
-  <!-- Header placeholder -->
+  <!-- Header -->
   <div id="header-placeholder"></div>
 
+  <!-- ===================== MAIN CONTENT ===================== -->
   <main>
     <section class="team-members" role="region" aria-label="Organizational Chart">
-      <div id="org-chart">
+      <div class="org-wrap">
         <h1>Organizational Chart</h1>
 
-        <!-- ===================== Tier 1 ===================== -->
-        <div class="tier tier-1">
-          <div class="row center" id="row-1">
-            <div class="card" data-id="1">
-              <div class="photo-wrap">
-                <img class="photo"
-                     src="https://images.unsplash.com/photo-1545996124-1b8d7d8a8d8d?w=200&q=80&auto=format&fit=crop"
-                     alt="Chief Executive Officer">
-              </div>
-              <div class="info">
-                <div class="title">Chief Executive Officer</div>
-                <div class="meta">Tel: <a href="tel:+631234567890">+63 123 456 7890</a></div>
-                <div class="meta">Email: <a href="mailto:ceo@example.com">ceo@example.com</a></div>
-              </div>
+        <!-- ===== Tier 1 ===== -->
+        <div class="row">
+          <div class="card">
+            <div class="photo-wrap">
+              <img class="photo" src="https://images.unsplash.com/photo-1545996124-1b8d7d8a8d8d?w=200&q=80&auto=format&fit=crop" alt="Chief Executive Officer">
             </div>
-          </div>
-          <div class="connector">
-            <div class="line"></div>
-            <div class="dot"></div>
-            <div class="line"></div>
+            <div class="info">
+              <div class="title">Rey Altamedica</div>
+              <div class="meta">Tel: <a href="tel:+631234567890">+63 123 456 7890</a></div>
+              <div class="meta">Email: <a href="mailto:ceo@example.com">ceo@example.com</a></div>
+            </div>
           </div>
         </div>
 
-        <!-- ===================== Tier 2 ===================== -->
-        <div class="tier tier-2">
-          <div class="row" id="row-2">
-            <div class="card" data-id="2">
-              <div class="photo-wrap">
-                <img class="photo"
-                     src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80&auto=format&fit=crop"
-                     alt="Head of Product">
-              </div>
-              <div class="info">
-                <div class="title">Head of Product</div>
-                <div class="meta">Tel: <a href="tel:+639171234567">+63 917 123 4567</a></div>
-                <div class="meta">Email: <a href="mailto:product@example.com">product@example.com</a></div>
-              </div>
-            </div>
+        <div class="connector">
+          <div class="line"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
 
-            <div class="card" data-id="3">
-              <div class="photo-wrap">
-                <img class="photo"
-                     src="https://images.unsplash.com/photo-1548142813-6efb3e9b0e1d?w=200&q=80&auto=format&fit=crop"
-                     alt="Head of Engineering">
-              </div>
-              <div class="info">
-                <div class="title">Head of Engineering</div>
-                <div class="meta">Tel: <a href="tel:+632912345678">+63 2 912 3456</a></div>
-                <div class="meta">Email: <a href="mailto:eng@example.com">eng@example.com</a></div>
-              </div>
+        <!-- ===== Tier 2 ===== -->
+        <div class="row">
+          <div class="card">
+            <div class="photo-wrap">
+              <img class="photo" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80&auto=format&fit=crop" alt="Head of Product">
+            </div>
+            <div class="info">
+              <div class="title">Head of Product</div>
+              <div class="meta">Tel: <a href="tel:+639171234567">+63 917 123 4567</a></div>
+              <div class="meta">Email: <a href="mailto:product@example.com">product@example.com</a></div>
             </div>
           </div>
-          <div class="connector">
-            <div class="line"></div>
-            <div class="dot"></div>
-            <div class="line"></div>
+
+          <div class="card">
+            <div class="photo-wrap">
+              <img class="photo" src="https://images.unsplash.com/photo-1548142813-6efb3e9b0e1d?w=200&q=80&auto=format&fit=crop" alt="Head of Engineering">
+            </div>
+            <div class="info">
+              <div class="title">Head of Engineering</div>
+              <div class="meta">Tel: <a href="tel:+632912345678">+63 2 912 3456</a></div>
+              <div class="meta">Email: <a href="mailto:eng@example.com">eng@example.com</a></div>
+            </div>
           </div>
         </div>
 
-        <!-- ===================== Tier 3 ===================== -->
-        <div class="tier tier-3">
-          <div class="row" id="row-3">
-            <div class="card" data-id="4">
-              <div class="photo-wrap">
-                <img class="photo"
-                     src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=200&q=80&auto=format&fit=crop"
-                     alt="Product Manager">
-              </div>
-              <div class="info">
-                <div class="title">Product Manager</div>
-                <div class="meta">Tel: <a href="tel:+639181234560">+63 918 123 4560</a></div>
-                <div class="meta">Email: <a href="mailto:pm@example.com">pm@example.com</a></div>
-              </div>
-            </div>
+        <div class="connector">
+          <div class="line"></div>
+          <div class="dot"></div>
+          <div class="line"></div>
+        </div>
 
-            <div class="card" data-id="5">
-              <div class="photo-wrap">
-                <img class="photo"
-                     src="https://images.unsplash.com/photo-1545997022-1f7b1b6b7b7f?w=200&q=80&auto=format&fit=crop"
-                     alt="Frontend Lead">
-              </div>
-              <div class="info">
-                <div class="title">Frontend Lead</div>
-                <div class="meta">Tel: <a href="tel:+639171112223">+63 917 111 2223</a></div>
-                <div class="meta">Email: <a href="mailto:frontend@example.com">frontend@example.com</a></div>
-              </div>
+        <!-- ===== Tier 3 ===== -->
+        <div class="row">
+          <div class="card">
+            <div class="photo-wrap">
+              <img class="photo" src="https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=200&q=80&auto=format&fit=crop" alt="Product Manager">
             </div>
+            <div class="info">
+              <div class="title">Product Manager</div>
+              <div class="meta">Tel: <a href="tel:+639181234560">+63 918 123 4560</a></div>
+              <div class="meta">Email: <a href="mailto:pm@example.com">pm@example.com</a></div>
+            </div>
+          </div>
 
-            <div class="card" data-id="6">
-              <div class="photo-wrap">
-                <img class="photo"
-                     src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=200&q=80&auto=format&fit=crop"
-                     alt="Backend Lead">
-              </div>
-              <div class="info">
-                <div class="title">Backend Lead</div>
-                <div class="meta">Tel: <a href="tel:+632811223344">+63 2 811 2233</a></div>
-                <div class="meta">Email: <a href="mailto:backend@example.com">backend@example.com</a></div>
-              </div>
+          <div class="card">
+            <div class="photo-wrap">
+              <img class="photo" src="https://images.unsplash.com/photo-1545997022-1f7b1b6b7b7f?w=200&q=80&auto=format&fit=crop" alt="Frontend Lead">
+            </div>
+            <div class="info">
+              <div class="title">Frontend Lead</div>
+              <div class="meta">Tel: <a href="tel:+639171112223">+63 917 111 2223</a></div>
+              <div class="meta">Email: <a href="mailto:frontend@example.com">frontend@example.com</a></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="photo-wrap">
+              <img class="photo" src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=200&q=80&auto=format&fit=crop" alt="Backend Lead">
+            </div>
+            <div class="info">
+              <div class="title">Backend Lead</div>
+              <div class="meta">Tel: <a href="tel:+632811223344">+63 2 811 2233</a></div>
+              <div class="meta">Email: <a href="mailto:backend@example.com">backend@example.com</a></div>
             </div>
           </div>
         </div>
@@ -129,7 +114,7 @@
     </section>
   </main>
 
-  <!-- Footer placeholder -->
+  <!-- Footer -->
   <div id="footer-placeholder"></div>
 </body>
 </html>
