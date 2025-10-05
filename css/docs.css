@@ -12,6 +12,21 @@
   justify-content: space-between;
 }
 
+/* Make h4 bigger than h3 */
+.brand-docs h4 {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #222;
+  padding: 12px;   /* a bit more padding than h3 */
+  margin: 10px 0;  /* more spacing between brands */
+}
+
+.doc-category h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #444;
+}
+
 .brand-docs h4:hover,
 .doc-category h3:hover {
   background-color: #ddd;
@@ -23,7 +38,12 @@
   margin-left: 10px;
 }
 
-/* Hide lists by default */
+/* Hide all doc-category by default */
+.brand-docs .doc-category {
+  display: none;
+}
+
+/* Hide all <ul> in doc-category by default */
 .doc-category ul {
   display: none;
   margin: 0;
@@ -35,12 +55,17 @@
   margin: 5px 0;
 }
 
+/* Show categories when parent brand is active */
+.brand-docs.active > .doc-category {
+  display: block;
+}
+
 /* Show lists when active */
 .doc-category.active > ul {
   display: block;
 }
 
-/* Brand toggle */
+/* Plus/minus icons */
 .brand-docs > h4 .toggle-icon::before {
   content: "+";
 }
@@ -48,7 +73,6 @@
   content: "–";
 }
 
-/* Classification toggle */
 .doc-category > h3 .toggle-icon::before {
   content: "+";
 }
