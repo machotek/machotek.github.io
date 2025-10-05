@@ -116,3 +116,9 @@
     display: block;
   }
 }
+/* hide altamedica logo when screen shrink */
+@media (max-width: 992px) {
+  .header-left {
+    display: none;
+  }
+}
