@@ -1,4 +1,4 @@
-/* Collapsible headers */
+/* Brand and classification headers */
 .brand-docs h4,
 .doc-category h3 {
   cursor: pointer;
@@ -23,39 +23,39 @@
   margin-left: 10px;
 }
 
-/* Collapsible sections */
-.brand-docs .doc-category,
-.brand-docs ul {
+/* Hidden by default */
+.doc-category,
+.doc-category ul {
   display: none;
   margin: 0;
   padding: 0 20px;
 }
 
-.brand-docs ul li {
+.doc-category ul li {
   list-style: none;
   margin: 5px 0;
 }
 
-/* Expanded states */
+/* When active */
 .brand-docs.active .doc-category {
-  display: block; /* show categories when brand expands */
+  display: block;
 }
 
 .doc-category.active ul {
-  display: block; /* show docs when classification expands */
+  display: block;
 }
 
-/* Plus/minus icons */
+/* Plus/minus */
+.brand-docs > h4 .toggle-icon::before {
+  content: "+";
+}
 .brand-docs.active > h4 .toggle-icon::before {
   content: "–";
 }
-.brand-docs:not(.active) > h4 .toggle-icon::before {
+
+.doc-category > h3 .toggle-icon::before {
   content: "+";
 }
-
 .doc-category.active > h3 .toggle-icon::before {
   content: "–";
-}
-.doc-category:not(.active) > h3 .toggle-icon::before {
-  content: "+";
 }
