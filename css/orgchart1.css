@@ -1,5 +1,5 @@
 /* ===============================
-   Root Variables (Colors, Shadows)
+   Root Variables
 ================================== */
 :root {
   --bg: #f5f7fb;
@@ -11,7 +11,7 @@
 }
 
 /* ===============================
-   General Page Layout
+   General Layout
 ================================== */
 html, body {
   margin: 0;
@@ -31,8 +31,6 @@ html, body {
 #header-placeholder,
 #footer-placeholder {
   width: 100%;
-  margin: 0;
-  padding: 0;
   display: block;
 }
 
@@ -59,22 +57,16 @@ h1 {
    Tier / Row Layout
 ================================== */
 .row {
-  margin-bottom: 44px;
-}
-
-/* Group wrapper for up to 3 cards */
-.card-group {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 28px;
-  flex-wrap: wrap;
-  margin-bottom: 28px;
+  margin-bottom: 44px;
+  flex-wrap: wrap; /* ✅ wrap cards to new lines inside the same tier */
 }
 
-/* Individual cards (3 per row by default) */
 .row .card {
-  flex: 1 1 calc(33.333% - 28px);
+  flex: 1 1 calc(33.333% - 28px); /* ✅ max 3 per line */
   max-width: 340px;
   min-width: 280px;
 }
@@ -143,7 +135,7 @@ h1 {
 }
 
 /* ===============================
-   Connectors Between Tiers
+   Connectors
 ================================== */
 .connector {
   position: relative;
@@ -169,15 +161,21 @@ h1 {
 }
 
 /* ===============================
-   Responsive Design
+   Responsive
 ================================== */
 
-/* Phones */
+/* Tablet: still 3 per row */
+@media (max-width: 900px) {
+  .row .card {
+    flex: 1 1 calc(33.333% - 20px);
+  }
+}
+
+/* Phones: stack vertically */
 @media (max-width: 768px) {
-  .card-group {
+  .row {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
   }
 
   .card {
@@ -191,15 +189,7 @@ h1 {
   }
 
   .connector {
-    display: none; /* Hide connectors on mobile */
-  }
-
-  .title {
-    font-size: 1rem;
-  }
-
-  .meta {
-    font-size: 0.85rem;
+    display: none;
   }
 }
 
