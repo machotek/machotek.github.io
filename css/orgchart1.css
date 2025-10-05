@@ -66,7 +66,14 @@ h1 {
   align-items: center;
   gap: 28px;
   margin-bottom: 44px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* allow wrapping for 3-per-tier rule */
+}
+
+/* Limit each card to 3 per row visually */
+.row .card {
+  flex: 1 1 calc(33.333% - 28px); /* 3 per row */
+  max-width: 340px;
+  min-width: 280px;
 }
 
 /* ===============================
@@ -80,12 +87,10 @@ h1 {
   align-items: center;
   gap: 16px;
   padding: 14px 18px;
-  width: 320px;
   min-height: 90px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover animation */
 .card.hovered {
   transform: translateY(-6px);
   box-shadow: 0 8px 24px rgba(23, 23, 23, 0.12);
@@ -167,24 +172,23 @@ h1 {
    Responsive Design
 ================================== */
 
-/* Medium screens (tablets) */
+/* Tablets */
 @media (max-width: 900px) {
   .org-wrap {
     max-width: 90%;
   }
 
   .row {
-    flex-wrap: wrap; /* allow wrapping */
     gap: 20px;
   }
 
-  .card {
-    width: 100%;
-    max-width: 360px;
+  /* Stack 2 per row */
+  .row .card {
+    flex: 1 1 calc(50% - 20px);
   }
 }
 
-/* Small screens (phones) */
+/* Phones */
 @media (max-width: 768px) {
   .row {
     flex-direction: column;
@@ -203,7 +207,7 @@ h1 {
   }
 
   .connector {
-    display: none; /* hide lines on mobile */
+    display: none; /* Hide connectors on mobile */
   }
 
   .title {
@@ -215,7 +219,7 @@ h1 {
   }
 }
 
-/* Extra small screens (very small phones) */
+/* Small Phones */
 @media (max-width: 480px) {
   .card {
     flex-direction: column;
