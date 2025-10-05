@@ -3,7 +3,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, white, lightgreen, darkblue); /* modern diagonal green gradient */
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/header.jpg');
+  background-size: cover;       /* image covers entire header */
+  background-position: center;  /* center the image */
+  background-repeat: no-repeat; /* prevent tiling */
   color: white;
   padding: 10px 20px;
   position: sticky;
