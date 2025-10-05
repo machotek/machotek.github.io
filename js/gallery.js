@@ -1,103 +1,96 @@
 document.addEventListener("DOMContentLoaded", () => {
   const images = document.querySelectorAll(".gallery-img");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const caption = document.getElementById("caption");
-  const closeBtn = document.querySelector(".lightbox .close");
-  const prevBtn = document.querySelector(".lightbox .prev");
-  const nextBtn = document.querySelector(".lightbox .next");
-
   let currentIndex = 0;
+  let lightbox = null;
 
-  // Open lightbox when clicking an image
   images.forEach((img, index) => {
     img.addEventListener("click", () => {
-      lightbox.style.display = "block";
       currentIndex = index;
-      showImage(currentIndex);
+      openLightbox();
     });
   });
 
-  // Close lightbox
-  closeBtn.addEventListener("click", () => {
-    lightbox.style.display = "none";
-  });
+  function openLightbox() {
+    // If lightbox already exists, remove it first
+    if (lightbox) lightbox.remove();
 
-  // Navigate left
-  prevBtn.addEventListener("click", () => {
-    showPrev();
-  });
+    // Create modal
+    lightbox = document.createElement("div");
+    lightbox.className = "lightbox";
+    lightbox.innerHTML = `
+      <span class="close">&times;</span>
+      <a class="prev">&#10094;</a>
+      <a class="next">&#10095;</a>
+      <img class="lightbox-content" src="${images[currentIndex].src}">
+      <div class="caption">${images[currentIndex].alt}</div>
+    `;
+    document.body.appendChild(lightbox);
 
-  // Navigate right
-  nextBtn.addEventListener("click", () => {
-    showNext();
-  });
+    // Select modal elements
+    const closeBtn = lightbox.querySelector(".close");
+    const prevBtn = lightbox.querySelector(".prev");
+    const nextBtn = lightbox.querySelector(".next");
+    const lightboxImg = lightbox.querySelector(".lightbox-content");
 
-  // Close when clicking outside image
-  lightbox.addEventListener("click", (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = "none";
-    }
-  });
+    // Close
+    closeBtn.onclick = () => lightbox.remove();
 
-  // ✅ Keyboard navigation
-  document.addEventListener("keydown", (e) => {
-    if (lightbox.style.display === "block") {
-      if (e.key === "ArrowLeft") showPrev();
-      else if (e.key === "ArrowRight") showNext();
-      else if (e.key === "Escape") lightbox.style.display = "none";
-    }
-  });
+    // Prev
+    prevBtn.onclick = () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    };
 
-  // ✅ Touch-swipe support
-  let startX = 0;
-  lightboxImg.addEventListener("touchstart", (e) => {
-    startX = e.touches[0].clientX;
-  });
+    // Next
+    nextBtn.onclick = () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightbox();
+    };
 
-  lightboxImg.addEventListener("touchend", (e) => {
-    let endX = e.changedTouches[0].clientX;
-    let diff = startX - endX;
-
-    if (Math.abs(diff) > 50) { // swipe threshold
-      if (diff > 0) {
-        showNext(); // swipe left → next
-      } else {
-        showPrev(); // swipe right → prev
+    // Click outside image closes modal
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.remove();
       }
-    }
-  });
+    });
 
-  // Helpers
-  function showImage(index, direction = null) {
-    // Remove classes before transition
-    lightboxImg.classList.remove("show", "slide-left", "slide-right");
+    // Keyboard support
+    document.addEventListener("keydown", handleKey);
 
-    // Small delay to restart animation
-    setTimeout(() => {
-      if (direction === "left") {
-        lightboxImg.classList.add("slide-left");
-      } else if (direction === "right") {
-        lightboxImg.classList.add("slide-right");
+    // Swipe support
+    let startX = 0;
+    lightboxImg.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+    });
+    lightboxImg.addEventListener("touchend", (e) => {
+      let endX = e.changedTouches[0].clientX;
+      let diff = startX - endX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextBtn.click();
+        else prevBtn.click();
       }
-
-      lightboxImg.src = images[index].src;
-      caption.textContent = images[index].alt;
-
-      // Force reflow so transition triggers
-      void lightboxImg.offsetWidth;
-
-      lightboxImg.classList.add("show");
-    }, 50);
+    });
   }
 
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex, "right"); // slide in from right
+  function updateLightbox() {
+    if (!lightbox) return;
+    const lightboxImg = lightbox.querySelector(".lightbox-content");
+    const caption = lightbox.querySelector(".caption");
+    lightboxImg.src = images[currentIndex].src;
+    caption.textContent = images[currentIndex].alt;
   }
 
-  function showNext() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex, "left"); // slide in from left
+  function handleKey(e) {
+    if (!lightbox) return;
+    if (e.key === "ArrowLeft") {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateLightbox();
+    } else if (e.key === "ArrowRight") {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateLightbox();
+    } else if (e.key === "Escape") {
+      lightbox.remove();
+      lightbox = null;
+    }
   }
 });
