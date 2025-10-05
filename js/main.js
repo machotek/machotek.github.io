@@ -15,3 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error('Error loading footer:', err));
 });
+// nav.classList.toggle("active") adds/removes the .active class each time you click the hamburger.
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.querySelector(".header-nav");
+
+    hamburger.addEventListener("click", function() {
+      nav.classList.toggle("active");
+    });
+  });
+</script>
