@@ -1,46 +1,158 @@
-/* --- GLOBAL LAYOUT FIX --- */
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --accent: #2b6ef6;
+  --muted: #6b7280;
+  --shadow: 0 6px 18px rgba(23, 23, 23, 0.08);
+  --radius: 12px;
+}
 
-/* Allow header and footer to stretch full width */
+/* Layout Fix */
+body, html {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: Inter, system-ui, sans-serif;
+  color: #111;
+}
+
+/* Ensure vertical stacking */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Header and Footer centered */
 #header-placeholder,
 #footer-placeholder {
-  width: 100%;
+ width: 100%;
   margin: 0;
   padding: 0;
   display: block;
 }
 
-/* Center the org chart only, not the whole page */
-main {
+/* Org Chart Container */
+.org-wrap {
+  max-width: 1100px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #111;
+  text-align: center;
+}
+
+/* Row for each tier */
+.row {
   display: flex;
   justify-content: center;
-  width: 100%;
-  padding: 40px 0;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 44px;
+  flex-wrap: nowrap;
 }
 
-/* Org chart container */
-#org-chart {
-  max-width: 1000px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Team members section only controls org chart layout */
-.team-members {
+/* Individual card */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
   display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  width: 320px;
+  min-height: 90px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card.hovered {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(23, 23, 23, 0.12);
+}
+
+/* Circle photo */
+.photo-wrap {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #e6eefc, #f6f9ff);
+  display: flex;
+  align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px rgba(43, 110, 246, 0.12);
+}
+
+/* Info text */
+.info {
+  flex: 1;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 4px 0;
+}
+
+.meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 2px 0;
+}
+
+.meta a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Connector line with dot */
+.connector {
+  position: relative;
   width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Optional styling for header/footer if needed */
-#header-placeholder {
-  background-color: #f5f5f5;
-  padding: 20px 0;
-  text-align: center;
+.connector .line {
+  height: 2px;
+  background: #d1d5db;
+  flex: 1;
 }
 
-#footer-placeholder {
-  background-color: #f5f5f5;
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 40px;
+.connector .dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin: 0 12px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .row {
+    flex-wrap: wrap;
+  }
+  .card {
+    width: 100%;
+    max-width: 360px;
+  }
 }
