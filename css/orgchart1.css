@@ -21,7 +21,6 @@ html, body {
   color: #111;
 }
 
-/* Wrapper ensures vertical stacking of all sections */
 .page-wrapper {
   display: flex;
   flex-direction: column;
@@ -29,7 +28,6 @@ html, body {
   width: 100%;
 }
 
-/* Header and Footer span full width */
 #header-placeholder,
 #footer-placeholder {
   width: 100%;
@@ -61,15 +59,20 @@ h1 {
    Tier / Row Layout
 ================================== */
 .row {
+  margin-bottom: 44px;
+}
+
+/* Group wrapper for up to 3 cards */
+.card-group {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 28px;
-  margin-bottom: 44px;
-  flex-wrap: wrap; /* allow wrapping for 3-per-tier rule */
+  flex-wrap: wrap;
+  margin-bottom: 28px;
 }
 
-/* Limit each card to 3 per row visually */
+/* Individual cards */
 .row .card {
   flex: 1 1 calc(33.333% - 28px); /* 3 per row */
   max-width: 340px;
@@ -77,7 +80,7 @@ h1 {
 }
 
 /* ===============================
-   Individual Cards
+   Cards
 ================================== */
 .card {
   background: var(--card);
@@ -96,7 +99,6 @@ h1 {
   box-shadow: 0 8px 24px rgba(23, 23, 23, 0.12);
 }
 
-/* Profile photo area */
 .photo-wrap {
   width: 64px;
   height: 64px;
@@ -109,7 +111,6 @@ h1 {
   overflow: hidden;
 }
 
-/* Circular profile image */
 .photo {
   width: 56px;
   height: 56px;
@@ -119,7 +120,6 @@ h1 {
   box-shadow: 0 2px 8px rgba(43, 110, 246, 0.12);
 }
 
-/* Card information */
 .info {
   flex: 1;
   text-align: left;
@@ -174,31 +174,22 @@ h1 {
 
 /* Tablets */
 @media (max-width: 900px) {
-  .org-wrap {
-    max-width: 90%;
-  }
-
-  .row {
-    gap: 20px;
-  }
-
-  /* Stack 2 per row */
   .row .card {
-    flex: 1 1 calc(50% - 20px);
+    flex: 1 1 calc(50% - 20px); /* 2 per row */
   }
 }
 
 /* Phones */
 @media (max-width: 768px) {
-  .row {
+  .card-group {
     flex-direction: column;
     align-items: center;
+    gap: 20px;
   }
 
   .card {
     width: 90%;
     max-width: 320px;
-    flex-direction: row;
   }
 
   .photo {

@@ -7,32 +7,27 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('mouseleave', () => card.classList.remove('hovered'));
   });
 
-  // Auto-format tiers: max 3 cards per line
+  // Auto-group cards into sets of 3 per row
   const rows = document.querySelectorAll('.row');
   rows.forEach(row => {
-    const cards = Array.from(row.children);
-    if (cards.length > 3) {
-      // Clear existing children
-      row.innerHTML = '';
+    const cards = Array.from(row.children).filter(c => c.classList.contains('card'));
 
-      // Group cards into sets of 3
+    if (cards.length > 3) {
+      row.innerHTML = ''; // clear old layout
+
       for (let i = 0; i < cards.length; i += 3) {
         const group = document.createElement('div');
-        group.classList.add('card-group');
-        group.style.display = 'flex';
-        group.style.justifyContent = 'center';
-        group.style.gap = '28px';
-        group.style.flexWrap = 'nowrap';
-
+        group.classList.add('card-group'); // styling handled by CSS
         cards.slice(i, i + 3).forEach(card => group.appendChild(card));
         row.appendChild(group);
       }
     } else {
-      // Normal layout for 3 or fewer
-      row.style.display = 'flex';
-      row.style.flexWrap = 'nowrap';
-      row.style.justifyContent = 'center';
-      row.style.gap = '28px';
+      // If <= 3 cards, just wrap them in one group
+      const group = document.createElement('div');
+      group.classList.add('card-group');
+      cards.forEach(card => group.appendChild(card));
+      row.innerHTML = '';
+      row.appendChild(group);
     }
   });
 });
