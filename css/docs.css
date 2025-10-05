@@ -23,8 +23,7 @@
   margin-left: 10px;
 }
 
-/* Hidden by default */
-.doc-category,
+/* Hide lists by default */
 .doc-category ul {
   display: none;
   margin: 0;
@@ -36,16 +35,12 @@
   margin: 5px 0;
 }
 
-/* When active */
-.brand-docs.active .doc-category {
+/* Show lists when active */
+.doc-category.active > ul {
   display: block;
 }
 
-.doc-category.active ul {
-  display: block;
-}
-
-/* Plus/minus */
+/* Brand toggle */
 .brand-docs > h4 .toggle-icon::before {
   content: "+";
 }
@@ -53,6 +48,7 @@
   content: "–";
 }
 
+/* Classification toggle */
 .doc-category > h3 .toggle-icon::before {
   content: "+";
 }
