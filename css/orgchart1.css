@@ -1,5 +1,5 @@
 /* ===============================
-   Root Variables
+   Root Variables (Colors, Shadows)
 ================================== */
 :root {
   --bg: #f5f7fb;
@@ -11,7 +11,7 @@
 }
 
 /* ===============================
-   General Layout
+   General Page Layout
 ================================== */
 html, body {
   margin: 0;
@@ -31,6 +31,8 @@ html, body {
 #header-placeholder,
 #footer-placeholder {
   width: 100%;
+  margin: 0;
+  padding: 0;
   display: block;
 }
 
@@ -54,21 +56,14 @@ h1 {
 }
 
 /* ===============================
-   Tier / Row Layout
+   Tier / Row Layout (CSS Grid)
 ================================== */
 .row {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 28px;
   margin-bottom: 44px;
-  flex-wrap: wrap; /* ✅ wrap cards to new lines inside the same tier */
-}
-
-.row .card {
-  flex: 1 1 calc(33.333% - 28px); /* ✅ max 3 per line */
-  max-width: 340px;
-  min-width: 280px;
+  justify-content: center;
 }
 
 /* ===============================
@@ -135,7 +130,7 @@ h1 {
 }
 
 /* ===============================
-   Connectors
+   Connectors Between Tiers
 ================================== */
 .connector {
   position: relative;
@@ -161,26 +156,27 @@ h1 {
 }
 
 /* ===============================
-   Responsive
+   Responsive Design
 ================================== */
 
-/* Tablet: still 3 per row */
-@media (max-width: 900px) {
-  .row .card {
-    flex: 1 1 calc(33.333% - 20px);
+/* Tablets (up to 1024px) → 3 per row max */
+@media (max-width: 1024px) {
+  .row {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
 }
 
-/* Phones: stack vertically */
+/* Phones */
 @media (max-width: 768px) {
   .row {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .card {
-    width: 90%;
+    width: 100%;
     max-width: 320px;
+    margin: 0 auto;
   }
 
   .photo {
@@ -189,7 +185,15 @@ h1 {
   }
 
   .connector {
-    display: none;
+    display: none; /* Hide connectors on mobile */
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .meta {
+    font-size: 0.85rem;
   }
 }
 
