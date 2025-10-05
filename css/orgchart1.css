@@ -72,9 +72,9 @@ h1 {
   margin-bottom: 28px;
 }
 
-/* Individual cards */
+/* Individual cards (3 per row by default) */
 .row .card {
-  flex: 1 1 calc(33.333% - 28px); /* 3 per row */
+  flex: 1 1 calc(33.333% - 28px);
   max-width: 340px;
   min-width: 280px;
 }
@@ -171,13 +171,6 @@ h1 {
 /* ===============================
    Responsive Design
 ================================== */
-
-/* Tablets */
-@media (max-width: 900px) {
-  .row .card {
-    flex: 1 1 calc(50% - 20px); /* 2 per row */
-  }
-}
 
 /* Phones */
 @media (max-width: 768px) {
