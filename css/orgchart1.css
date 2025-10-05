@@ -7,19 +7,37 @@
   --radius: 12px;
 }
 
-html, body {
-  height: 100%;
+/* Layout Fix */
+body, html {
   margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: #111;
+  padding: 0;
   background: var(--bg);
+  font-family: Inter, system-ui, sans-serif;
+  color: #111;
 }
 
+/* Ensure vertical stacking */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Header and Footer centered */
+#header-placeholder,
+#footer-placeholder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Org Chart Container */
 .org-wrap {
   max-width: 1100px;
   width: 100%;
-  margin: 0 auto;
-  padding: 40px 16px;
+  margin: 40px auto;
+  padding: 0 16px;
 }
 
 h1 {
@@ -30,15 +48,17 @@ h1 {
   text-align: center;
 }
 
+/* Row for each tier */
 .row {
   display: flex;
-  gap: 28px;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 28px;
   margin-bottom: 44px;
   flex-wrap: nowrap;
 }
 
+/* Individual card */
 .card {
   background: var(--card);
   border-radius: var(--radius);
@@ -57,6 +77,7 @@ h1 {
   box-shadow: 0 8px 24px rgba(23, 23, 23, 0.12);
 }
 
+/* Circle photo */
 .photo-wrap {
   width: 64px;
   height: 64px;
@@ -78,6 +99,7 @@ h1 {
   box-shadow: 0 2px 8px rgba(43, 110, 246, 0.12);
 }
 
+/* Info text */
 .info {
   flex: 1;
 }
@@ -99,6 +121,7 @@ h1 {
   text-decoration: none;
 }
 
+/* Connector line with dot */
 .connector {
   position: relative;
   width: 100%;
