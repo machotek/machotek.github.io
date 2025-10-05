@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #28a745, #81c784); /* modern diagonal green gradient */
+  background: linear-gradient(135deg, white, lightgreen, darkblue); /* modern diagonal green gradient */
   color: white;
   padding: 10px 20px;
   position: sticky;
