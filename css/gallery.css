@@ -1,25 +1,4 @@
-/* --- Base Styles --- */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-main {
-  padding: 20px;
-}
-
-footer {
-  background-color: #222;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-
-/* --- Removed header-specific styles to avoid conflicts --- */
-/* Your custom header CSS should go in a separate file or section */
-
-/* --- Photo Carousel Styles --- */
+/* --- Photo Carousel --- */
 .photo-carousel {
   display: flex;
   overflow-x: auto;
@@ -32,55 +11,53 @@ footer {
   height: 200px;
   border-radius: 8px;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* --- Lightbox Styles --- */
+.photo-carousel img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Dynamic Lightbox --- */
 .lightbox {
-  display: none;
   position: fixed;
-  z-index: 999;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
 }
 
 .lightbox-content {
-  margin: auto;
-  display: block;
   max-width: 90%;
   max-height: 80%;
   border-radius: 8px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .close {
   position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
+  top: 20px; right: 35px;
+  color: white; font-size: 40px;
+  font-weight: bold; cursor: pointer;
 }
 
-#caption {
+.caption {
   text-align: center;
   color: #ccc;
   padding: 10px 0;
   font-size: 16px;
 }
 
-/* --- Global Link Hover Effects --- */
-a {
-  transition: transform 0.2s ease, color 0.2s ease;
-  display: inline-block;
+/* Navigation arrows */
+.lightbox .prev, .lightbox .next {
+  position: absolute; top: 50%;
+  font-size: 2em; color: white;
+  cursor: pointer; user-select: none;
+  transform: translateY(-50%);
 }
-
-a:hover {
-  transform: scale(1.1);
-  color: #FFD700;
-  text-decoration: none;
-}
+.prev { left: 10px; }
+.next { right: 10px; }

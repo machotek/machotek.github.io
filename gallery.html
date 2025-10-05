@@ -4,29 +4,26 @@
   <meta charset="UTF-8">
   <title>Gallery | Machotech</title>
 
-  <!-- Global site-wide styles -->
+  <!-- Global styles -->
   <link rel="stylesheet" href="css/style.css">
 
   <!-- Gallery-specific styles (carousel + lightbox) -->
   <link rel="stylesheet" href="css/gallery.css">
 
-  <!-- Main JS: handles header/footer loading -->
-  <script src="js/main.js" defer></script>
-
-  <!-- Gallery JS: handles lightbox modal, navigation, swipe -->
-  <script src="js/gallery.js" defer></script>
+  <!-- JS -->
+  <script src="js/main.js" defer></script> <!-- Loads header/footer -->
+  <script src="js/gallery.js" defer></script> <!-- Handles dynamic lightbox -->
 </head>
 <body>
-  <!-- Header placeholder: dynamically loaded via main.js -->
+  <!-- Header placeholder -->
   <div id="header-placeholder"></div>
   
   <main>
-    <!-- Photo gallery timeline section -->
+    <!-- Gallery timeline section -->
     <section class="timeline" aria-label="Photo Gallery Timeline">
 
       <!-- Year 2023 -->
       <h2>2023</h2>
-      <!-- Photo carousel for 2023 events -->
       <div class="photo-carousel">
         <img src="photos/2023/photo1.jpg" alt="Event 1" class="gallery-img">
         <img src="photos/2023/photo2.jpg" alt="Event 2" class="gallery-img">
@@ -34,7 +31,6 @@
 
       <!-- Year 2024 -->
       <h2>2024</h2>
-      <!-- Photo carousel for 2024 events -->
       <div class="photo-carousel">
         <img src="photos/2024/photo1.jpg" alt="Event 3" class="gallery-img">
         <img src="photos/2024/photo2.jpg" alt="Event 4" class="gallery-img">
@@ -43,7 +39,7 @@
     </section>
   </main>
 
-  <!-- Footer placeholder: dynamically loaded via main.js -->
+  <!-- Footer placeholder -->
   <div id="footer-placeholder"></div>
 </body>
 </html>
