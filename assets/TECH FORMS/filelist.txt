@@ -1,0 +1,107 @@
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CA _LIQ FORM.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Daily Expense Report.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\filelist.txt
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Leave-Offset-Undertime-Request-Form-2022.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Stock Issuance Request Form.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Tftpd32
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration BS-120.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Centrifuge-Rotator - Analog.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Centrifuge-Rotator - Digital.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Electrolytes.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration GEA-SAGA.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Heating and Cooling Equipment.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Hematology Analyzer - Rayto - Linear.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Hematology Analyzer - Zybio(1).xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Hematology Analyzer - Zybio.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration ICHROMA II.xlsm
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Kroma.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Pipette.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Semi Auto Chemistry Analyzer.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Urine Strips Analyzer.xlsm
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Calibration Template\Calibration Weighing Scale.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Biosafety Cabinet.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Brush Type Centrifuge.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Brushless Centrifuge.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM BS120.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM COAG.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM ECG.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Electrolytes.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Fully Auto Chemistry.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM GEA.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Hema.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Hemoglobinometer.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Incubator.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Microscope.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Pipette Shaker.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Pipette.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM SAGA.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Semi Auto Chemistry.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Semi Auto.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\PM Template\PM Waterbath.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\CAL_PM TEMPLATE\Tftpd32\Tftpd32-3.23-setup.exe
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Online Job Order
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Service Assistant
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Online Job Order\ATTENDANCE FORM -KARL (Responses).xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Service Assistant\Annual Service Report Monitoring.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Service Assistant\Labels
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Service Assistant\Technical Monthly Reporting.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Service Assistant\Labels\Service reports label 2019.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Service Assistant\Labels\Service reports label.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Accountabiliity Form.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\After Sales Terms and Conditions (Technical Department).pdf
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\AR FORM.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Complaint Report Form.doc
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Complaint Report Form.pdf
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\CSS TECH.png
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Daily Expense Report.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\EQUIPMENT EVALUATION FORM.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\gwa form.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Installation Request Form
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Installation Request Form.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Installation Waiver Form.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\JO Form.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\JOB ENTRY FORM (TECH-FM-JE Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Leave-Offset-Undertime-Request-Form-PDF.pdf
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Leave-Offset-Undertime-Request-Form.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\QC Checklist Form.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Quality-Evaluation-Sheet.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\REPAIR FORM.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Service Report Form TECH-FM-SR Rev.04 S.2024.pdf
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Service Report Form.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\SERVICE REQUEST FORM (TECH-FM-SREQ Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Stock Issuance Request Form.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Technical Endorsement Form.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Tools Issuance Form.doc
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Training Form (TECH-FM-MATR Rev. 0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Installation Request Form\INSTALLATION REQUEST FORM (TECH-FM-INST Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Installation Request Form\Installation Waiver Form.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\TECH Forms\Technical Forms\Installation Request Form\Installation Waiver Form.xlsx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Process Flow.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Quality Check Process Flow.pdf
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Tech Guidelines & Forms.rar
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Guidelines and Procedures
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\INSTALLATION REQUEST FORM (TECH-FM-INST Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\JOB ENTRY FORM (TECH-FM-JE Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\JOB ENTRY FORM (TECH-FM-JE Rev.0).pdf
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\MONTHLY TECHNICAL REPORT (TECH-FM-MTR Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\PROPOSAL REQUEST FORM (TECH-FM-PRF Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\SERVICE REQUEST FORM (TECH-FM-SREQ Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\SERVICE REQUEST FORM (TECH-FM-SREQ Rev.0).pdf
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\SERVICE REQUEST FORM (TECH-FM-SREQ Rev.pdf
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\Training Form (TECH-FM-MATR Rev. 0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Forms\~$STALLATION REQUEST FORM (TECH-FM-INST Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Guidelines and Procedures\INSTALLATION PROCEDURE FLOW.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Guidelines and Procedures\Installation Procedures (TD-GL-INST-001 Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Guidelines and Procedures\REPAIR PROCEDURES FLOW.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Guidelines and Procedures\Repair, Maintenance & Calibration Procedures (TD-GL-RMC-001 Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Guidelines and Procedures\~$pair, Maintenance & Calibration Procedures (TD-GL-RMC-001 Rev.0).docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Guidelines and Procedures\~$STALLATION PROCEDURE FLOW.docx
+C:\Users\Jayjay\Documents\GitHub\machotek.github.io\assets\TECH FORMS\Tech Guidelines\Final\Guidelines and Procedures\~$stallation Procedures (TD-GL-INST-001 Rev.0).docx
