@@ -1,12 +1,10 @@
-// ==============================
 // Dynamic Lightbox for Gallery
-// ==============================
 document.addEventListener("DOMContentLoaded", () => {
-  const images = document.querySelectorAll(".gallery-img"); // all gallery images
+  const images = document.querySelectorAll(".gallery-img"); // All gallery images
   let currentIndex = 0;
   let lightbox = null;
 
-  // Open lightbox when clicking an image
+  // Attach click event to each image
   images.forEach((img, index) => {
     img.addEventListener("click", () => {
       currentIndex = index;
@@ -14,11 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ------------------------------
-  // Open Lightbox
-  // ------------------------------
+  // Function to open the lightbox
   function openLightbox() {
-    if (lightbox) lightbox.remove();
+    if (lightbox) lightbox.remove(); // remove existing if open
 
     lightbox = document.createElement("div");
     lightbox.className = "lightbox";
@@ -28,7 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
       <a class="next">&#10095;</a>
       <img class="lightbox-content" src="${images[currentIndex].src}">
       <div class="caption">${images[currentIndex].alt}</div>
-      <div class="lightbox-thumbs"></div>
+      <div class="lightbox-thumbs">
+        ${Array.from(images).map((img, i) =>
+          `<img src="${img.src}" alt="${img.alt}" class="${i === currentIndex ? "active" : ""}">`
+        ).join("")}
+      </div>
     `;
     document.body.appendChild(lightbox);
 
@@ -38,33 +38,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = lightbox.querySelector(".close");
     const prevBtn = lightbox.querySelector(".prev");
     const nextBtn = lightbox.querySelector(".next");
-    const thumbsContainer = lightbox.querySelector(".lightbox-thumbs");
-
-    // Add thumbnails dynamically
-    images.forEach((img, idx) => {
-      const thumb = document.createElement("img");
-      thumb.src = img.src;
-      thumb.alt = img.alt;
-      thumb.className = "thumb" + (idx === currentIndex ? " active" : "");
-      thumb.addEventListener("click", () => {
-        currentIndex = idx;
-        updateLightbox();
-      });
-      thumbsContainer.appendChild(thumb);
-    });
+    const thumbs = lightbox.querySelectorAll(".lightbox-thumbs img");
 
     // Close lightbox
     closeBtn.onclick = () => closeLightbox();
 
-    // Prev/Next navigation
+    // Navigate prev
     prevBtn.onclick = () => {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       updateLightbox();
     };
+
+    // Navigate next
     nextBtn.onclick = () => {
       currentIndex = (currentIndex + 1) % images.length;
       updateLightbox();
     };
+
+    // Thumbnail click navigation
+    thumbs.forEach((thumb, idx) => {
+      thumb.addEventListener("click", () => {
+        currentIndex = idx;
+        updateLightbox();
+      });
+    });
 
     // Click outside image closes modal
     lightbox.addEventListener("click", (e) => {
@@ -87,57 +84,30 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Clean up when lightbox removed
+    // Clean up on removal
     lightbox.addEventListener("DOMNodeRemoved", () => {
       document.removeEventListener("keydown", handleKey);
-      document.body.style.overflow = ""; // unlock background scroll
+      document.body.style.overflow = ""; // unlock scroll
       lightbox = null;
     });
   }
 
-  // ------------------------------
-  // Close Lightbox
-  // ------------------------------
-  function closeLightbox() {
-    if (lightbox) {
-      lightbox.remove();
-      document.body.style.overflow = ""; // unlock scroll
-    }
-  }
-
-  // ------------------------------
-  // Update Lightbox (image, caption, active thumb)
-  // ------------------------------
+  // Update lightbox image, caption, and active thumb
   function updateLightbox() {
     if (!lightbox) return;
+    lightbox.querySelector(".lightbox-content").src = images[currentIndex].src;
+    lightbox.querySelector(".caption").textContent = images[currentIndex].alt;
 
-    const mainImg = lightbox.querySelector(".lightbox-content");
-    const caption = lightbox.querySelector(".caption");
     const thumbs = lightbox.querySelectorAll(".lightbox-thumbs img");
-
-    // Update image & caption
-    mainImg.src = images[currentIndex].src;
-    caption.textContent = images[currentIndex].alt;
-
-    // Highlight active thumbnail
-    thumbs.forEach((t, i) => {
-      t.classList.toggle("active", i === currentIndex);
+    thumbs.forEach((thumb, idx) => {
+      thumb.classList.toggle("active", idx === currentIndex);
+      if (idx === currentIndex) {
+        thumb.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
     });
-
-    // Scroll active thumbnail into view
-    const activeThumb = thumbs[currentIndex];
-    if (activeThumb) {
-      activeThumb.scrollIntoView({
-        behavior: "smooth",
-        inline: "center",
-        block: "nearest"
-      });
-    }
   }
 
-  // ------------------------------
   // Keyboard navigation handler
-  // ------------------------------
   function handleKey(e) {
     if (!lightbox) return;
     if (e.key === "ArrowLeft") {
@@ -149,5 +119,10 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if (e.key === "Escape") {
       closeLightbox();
     }
+  }
+
+  // Close lightbox helper
+  function closeLightbox() {
+    if (lightbox) lightbox.remove();
   }
 });

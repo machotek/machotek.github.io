@@ -1,6 +1,4 @@
-/* ==============================
-   Responsive Photo Gallery Grid
-   ============================== */
+/* --- Responsive Photo Gallery --- */
 .photo-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -21,9 +19,19 @@
   transform: scale(1.05);
 }
 
-/* ==============================
-   Lightbox Overlay
-   ============================== */
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+  .photo-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 8px;
+    padding: 10px;
+  }
+  .photo-gallery img {
+    height: 140px;
+  }
+}
+
+/* --- Lightbox Overlay --- */
 .lightbox {
   position: fixed;
   top: 0; left: 0;
@@ -34,26 +42,29 @@
   align-items: center;
   flex-direction: column;
   z-index: 9999;
+  overflow: hidden; /* ensures no scroll bleed */
 }
 
+/* Main lightbox image */
 .lightbox-content {
   max-width: 90%;
-  max-height: 80%;
+  max-height: 70vh; /* leaves space for thumbnails */
   border-radius: 8px;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  margin-bottom: 10px;
 }
 
-/* Close Button */
+/* Close button */
 .close {
   position: absolute;
-  top: 20px; right: 30px;
+  top: 20px; right: 35px;
   color: white;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* Caption */
+/* Caption under image */
 .caption {
   text-align: center;
   color: #ccc;
@@ -61,8 +72,9 @@
   font-size: 16px;
 }
 
-/* Navigation Arrows */
-.lightbox .prev, .lightbox .next {
+/* Navigation arrows */
+.lightbox .prev,
+.lightbox .next {
   position: absolute;
   top: 50%;
   font-size: 2em;
@@ -74,81 +86,48 @@
 .prev { left: 10px; }
 .next { right: 10px; }
 
-/* ==============================
-   Thumbnail Strip in Lightbox
-   ============================== */
+/* --- Thumbnail strip under image --- */
 .lightbox-thumbs {
   display: flex;
-  flex-wrap: nowrap;       /* keep single row */
-  justify-content: flex-start;
   gap: 8px;
-  margin-top: 15px;
-  overflow-x: auto;        /* scroll horizontally if too many */
-  padding: 10px;
-  max-width: 90%;
-  scrollbar-width: none;   /* hide scrollbar (Firefox) */
-}
-.lightbox-thumbs::-webkit-scrollbar {
-  display: none;           /* hide scrollbar (Chrome/Safari) */
+  overflow-x: auto;
+  padding: 8px 12px;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .lightbox-thumbs img {
   width: 60px;
   height: 60px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  opacity: 0.6;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-  flex-shrink: 0;          /* prevent shrinking */
+  opacity: 0.7;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
+
 .lightbox-thumbs img:hover {
-  transform: scale(1.1);
   opacity: 1;
+  transform: scale(1.1);
 }
+
+/* Highlight active thumbnail */
 .lightbox-thumbs img.active {
   border: 2px solid #fff;
   opacity: 1;
 }
 
-/* ==============================
-   Mobile Adjustments
-   ============================== */
+/* --- Mobile adjustments --- */
 @media (max-width: 768px) {
-  .photo-gallery {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 8px;
-    padding: 10px;
-  }
-
-  .photo-gallery img {
-    height: 140px;
-  }
-
   .lightbox-content {
-    max-width: 95%;
-    max-height: 70vh;
-    border-radius: 6px;
+    max-height: 60vh; /* smaller image on phones */
   }
-
   .caption {
     font-size: 14px;
-    padding: 6px 0;
   }
-
   .lightbox-thumbs img {
     width: 45px;
     height: 45px;
-  }
-
-  .lightbox .prev, .lightbox .next {
-    font-size: 1.5em;
-    top: 45%;
-  }
-
-  .close {
-    font-size: 28px;
-    top: 10px;
-    right: 15px;
   }
 }
