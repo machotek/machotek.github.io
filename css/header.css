@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   /* Dark overlay + background image */
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/header.jpg') no-repeat center center;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://github.com/machotek/machotek.github.io/blob/main/assets/header.jpg') no-repeat center center;
   background-size: cover;       /* make image cover entire header */
   color: white;
   padding: 10px 20px;
