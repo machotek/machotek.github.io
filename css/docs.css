@@ -1,24 +1,32 @@
-/* Brand and classification headers */
+/* =========================
+   Brand & Classification Headers
+   ========================= */
 .brand-docs h4,
 .doc-category h3 {
   cursor: pointer;
-  background-color: #f0f0f0;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 5px;
+  background-color: #f9f9f9;
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 6px;
   transition: background 0.3s;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  text-align: left;
+}
+
+/* Hover effect */
+.brand-docs h4:hover,
+.doc-category h3:hover {
+  background-color: #eee;
 }
 
 /* Make h4 bigger than h3 */
 .brand-docs h4 {
-  font-size: 1.4em;
-  font-weight: bold;
+  font-size: 1.3em;
+  font-weight: 700;
   color: #222;
-  padding: 12px;   /* a bit more padding than h3 */
-  margin: 10px 0;  /* more spacing between brands */
+  margin: 12px 0;
 }
 
 .doc-category h3 {
@@ -27,23 +35,21 @@
   color: #444;
 }
 
-.brand-docs h4:hover,
-.doc-category h3:hover {
-  background-color: #ddd;
-}
-
-/* Icon */
+/* Icon spacing */
 .toggle-icon {
   font-weight: bold;
-  margin-left: 10px;
+  margin-left: 8px;
 }
 
-/* Hide all doc-category by default */
+/* =========================
+   Collapsible Logic
+   ========================= */
+/* Hide categories by default */
 .brand-docs .doc-category {
   display: none;
 }
 
-/* Hide all <ul> in doc-category by default */
+/* Hide lists by default */
 .doc-category ul {
   display: none;
   margin: 0;
@@ -52,10 +58,13 @@
 
 .doc-category ul li {
   list-style: none;
-  margin: 5px 0;
+  margin: 4px 0;
+  padding: 4px 0;
+  font-size: 0.95em;
+  color: #333;
 }
 
-/* Show categories when parent brand is active */
+/* Show categories when parent is active */
 .brand-docs.active > .doc-category {
   display: block;
 }
@@ -78,4 +87,66 @@
 }
 .doc-category.active > h3 .toggle-icon::before {
   content: "–";
+}
+
+/* =========================
+   Responsive Layout
+   ========================= */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+/* Keep centered but not too wide */
+.org-wrap {
+  max-width: 1100px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 0 16px;
+  text-align: left;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .brand-docs h4,
+  .doc-category h3 {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 10px 12px;
+  }
+
+  .doc-category ul {
+    padding: 0 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .brand-docs h4,
+  .doc-category h3 {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .toggle-icon {
+    margin-left: 0;
+  }
+
+  .doc-category ul {
+    padding: 0 10px;
+  }
+
+  .doc-category ul li {
+    font-size: 0.9em;
+    text-align: center;
+  }
 }
