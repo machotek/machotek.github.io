@@ -1,128 +1,95 @@
-// Dynamic Lightbox for Gallery
+// Optimized Dynamic Lightbox for Gallery
 document.addEventListener("DOMContentLoaded", () => {
 const images = document.querySelectorAll(".gallery-img");
 let currentIndex = 0;
-let lightbox = null;
+let lightbox, lightboxImg, caption, thumbs;
 
-// Open lightbox when an image is clicked
-images.forEach((img, index) => {
-img.addEventListener("click", () => {
-currentIndex = index;
-openLightbox();
-});
-});
-
-// Open the lightbox
-function openLightbox() {
-if (lightbox) lightbox.remove();
-
-```
+// Create lightbox once
 lightbox = document.createElement("div");
 lightbox.className = "lightbox";
-lightbox.innerHTML = `
-  <span class="close">&times;</span>
-  <a class="prev">&#10094;</a>
-  <a class="next">&#10095;</a>
-  <img class="lightbox-content" src="${images[currentIndex].src}">
-  <div class="caption">${images[currentIndex].alt}</div>
-  <div class="lightbox-thumbs">
-    ${Array.from(images)
-      .map(
-        (img, i) =>
-          `<img src="${img.src}" alt="${img.alt}" class="${i === currentIndex ? "active" : ""}">`
-      )
-      .join("")}
-  </div>
-`;
+lightbox.innerHTML = `     <span class="close">&times;</span>     <a class="prev">&#10094;</a>     <a class="next">&#10095;</a>     <img class="lightbox-content" src="">     <div class="caption"></div>     <div class="lightbox-thumbs"></div>
+  `;
 document.body.appendChild(lightbox);
+lightbox.style.display = "none";
 
-// Lock background scroll
-document.body.style.overflow = "hidden";
-
+// Reference elements
 const closeBtn = lightbox.querySelector(".close");
 const prevBtn = lightbox.querySelector(".prev");
 const nextBtn = lightbox.querySelector(".next");
-const thumbs = lightbox.querySelectorAll(".lightbox-thumbs img");
-const mainImg = lightbox.querySelector(".lightbox-content");
+lightboxImg = lightbox.querySelector(".lightbox-content");
+caption = lightbox.querySelector(".caption");
+const thumbsContainer = lightbox.querySelector(".lightbox-thumbs");
 
-// Close lightbox
-closeBtn.onclick = closeLightbox;
+// Build thumbnails once (for speed)
+thumbsContainer.innerHTML = Array.from(images)
+.map((img, i) => `<img src="${img.src}" alt="${img.alt}" data-index="${i}">`)
+.join("");
+thumbs = thumbsContainer.querySelectorAll("img");
 
-// Prev / Next navigation
-prevBtn.onclick = () => navigate(-1);
-nextBtn.onclick = () => navigate(1);
-
-// Thumbnail click navigation
-thumbs.forEach((thumb, idx) => {
-  thumb.addEventListener("click", () => {
-    currentIndex = idx;
-    updateLightbox();
-  });
+// Open lightbox
+images.forEach((img, index) => {
+img.addEventListener("click", () => openLightbox(index));
 });
 
-// Click outside closes lightbox
-lightbox.addEventListener("click", (e) => {
-  if (e.target === lightbox) closeLightbox();
-});
-
-// Keyboard navigation
-document.addEventListener("keydown", handleKey);
-
-// Touch swipe
-let startX = 0;
-mainImg.addEventListener("touchstart", (e) => {
-  startX = e.touches[0].clientX;
-});
-mainImg.addEventListener("touchend", (e) => {
-  const diff = startX - e.changedTouches[0].clientX;
-  if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
-});
-```
-
+function openLightbox(index) {
+currentIndex = index;
+updateLightbox();
+lightbox.style.display = "flex";
+document.body.style.overflow = "hidden"; // lock background scroll
 }
 
-// Update image, caption, and active thumb
+function closeLightbox() {
+lightbox.style.display = "none";
+document.body.style.overflow = ""; // restore scroll
+}
+
+// Update image + caption + active thumb
 function updateLightbox() {
-if (!lightbox) return;
-const mainImg = lightbox.querySelector(".lightbox-content");
-const caption = lightbox.querySelector(".caption");
-const thumbs = lightbox.querySelectorAll(".lightbox-thumbs img");
-
-```
-mainImg.src = images[currentIndex].src;
+lightboxImg.src = images[currentIndex].src;
 caption.textContent = images[currentIndex].alt;
-
-thumbs.forEach((thumb, idx) => {
-  thumb.classList.toggle("active", idx === currentIndex);
-  if (idx === currentIndex) {
-    thumb.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-  }
-});
-```
-
+thumbs.forEach((t) => t.classList.remove("active"));
+thumbs[currentIndex].classList.add("active");
+thumbs[currentIndex].scrollIntoView({ inline: "center", behavior: "smooth" });
 }
 
-// Navigate through images
-function navigate(direction) {
-currentIndex = (currentIndex + direction + images.length) % images.length;
+// Navigation
+function navigate(dir) {
+currentIndex = (currentIndex + dir + images.length) % images.length;
 updateLightbox();
 }
 
-// Handle keyboard navigation
-function handleKey(e) {
-if (!lightbox) return;
-if (e.key === "ArrowLeft") navigate(-1);
-else if (e.key === "ArrowRight") navigate(1);
-else if (e.key === "Escape") closeLightbox();
-}
+// Event listeners
+closeBtn.addEventListener("click", closeLightbox);
+prevBtn.addEventListener("click", () => navigate(-1));
+nextBtn.addEventListener("click", () => navigate(1));
 
-// Close the lightbox and restore scroll
-function closeLightbox() {
-if (lightbox) {
-document.body.style.overflow = ""; // ✅ restore scroll
-document.removeEventListener("keydown", handleKey);
-lightbox.remove();
-lightbox = null;
+// Click outside closes
+lightbox.addEventListener("click", (e) => {
+if (e.target === lightbox) closeLightbox();
+});
+
+// Keyboard navigation
+document.addEventListener("keydown", (e) => {
+if (lightbox.style.display === "flex") {
+if (e.key === "ArrowLeft") navigate(-1);
+if (e.key === "ArrowRight") navigate(1);
+if (e.key === "Escape") closeLightbox();
 }
-}
+});
+
+// Touch swipe
+let startX = 0;
+lightboxImg.addEventListener("touchstart", (e) => (startX = e.touches[0].clientX));
+lightboxImg.addEventListener("touchend", (e) => {
+const diff = startX - e.changedTouches[0].clientX;
+if (Math.abs(diff) > 50) navigate(diff > 0 ? 1 : -1);
+});
+
+// Thumbnail click
+thumbs.forEach((thumb) =>
+thumb.addEventListener("click", (e) => {
+currentIndex = parseInt(e.target.dataset.index);
+updateLightbox();
+})
+);
 });
