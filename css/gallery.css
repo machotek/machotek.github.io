@@ -31,16 +31,13 @@
   align-items: center;
   z-index: 9999;
   padding-top: 40px;
-  overflow-y: auto; /* allow scrolling inside */
+  overflow-y: auto; /* ✅ allows scrolling */
   -webkit-overflow-scrolling: touch; /* smooth mobile scroll */
-}
-
-/* Smooth open/close fade */
-.lightbox {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.25s ease;
 }
+
 .lightbox[style*="display: flex"] {
   opacity: 1;
   visibility: visible;
@@ -52,7 +49,7 @@
   max-height: 70vh;
   border-radius: 8px;
   margin-top: 40px;
-  margin-bottom: 140px; /* more space to accommodate thumbnails */
+  margin-bottom: 130px; /* extra space for thumbnails */
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
@@ -97,8 +94,8 @@
 
 /* --- Thumbnail strip --- */
 .lightbox-thumbs {
-  position: sticky;          /* sticky so it stays above bottom */
-  bottom: 80px;              /* move it higher for visibility */
+  position: sticky;
+  bottom: 20px;
   width: auto;
   max-width: 90%;
   display: flex;
@@ -109,7 +106,7 @@
   box-sizing: border-box;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 8px;
   z-index: 10000;
 }
@@ -157,11 +154,11 @@
   .lightbox-content {
     max-height: 60vh;
     margin-top: 30px;
-    margin-bottom: 120px; /* ensure space for mobile thumbnails */
+    margin-bottom: 120px; /* space for thumbs */
   }
 
   .lightbox-thumbs {
-    bottom: 20px; /* visible on mobile */
+    bottom: 10px;
     max-width: 95%;
     padding: 6px 8px;
   }

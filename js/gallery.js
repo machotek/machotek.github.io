@@ -1,6 +1,5 @@
 // Optimized Dynamic Lightbox for Photo Gallery
 document.addEventListener("DOMContentLoaded", () => {
-  // Select all images inside .photo-gallery
   const images = document.querySelectorAll(".photo-gallery img, .gallery-img");
   if (!images.length) return;
 
@@ -21,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.body.appendChild(lightbox);
   lightbox.style.display = "none";
 
-  // References
   const closeBtn = lightbox.querySelector(".close");
   const prevBtn = lightbox.querySelector(".prev");
   const nextBtn = lightbox.querySelector(".next");
@@ -42,23 +40,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openLightbox(index) {
     currentIndex = index;
-    updateLightbox();
-    lightbox.style.display = "flex";
-    document.body.style.overflow = "hidden"; // disable page scroll
+
+    // Preload the image for instant display
+    const tempImg = new Image();
+    tempImg.src = images[currentIndex].src;
+    tempImg.onload = () => {
+      updateLightbox();
+      lightbox.style.display = "flex";
+      document.body.style.overflow = "hidden"; // disable scroll
+    };
   }
 
   function closeLightbox() {
     lightbox.style.display = "none";
-    document.body.style.overflow = ""; // re-enable scroll
+    // ✅ Restore scroll safely (even on Safari)
+    document.body.style.overflow = "auto";
   }
 
   function updateLightbox() {
     lightboxImg.src = images[currentIndex].src;
-    caption.textContent = images[currentIndex].alt;
+    caption.textContent = images[currentIndex].alt || "";
 
     thumbs.forEach((t) => t.classList.remove("active"));
     thumbs[currentIndex].classList.add("active");
-    thumbs[currentIndex].scrollIntoView({ inline: "center", behavior: "smooth" });
+    thumbs[currentIndex].scrollIntoView({
+      inline: "center",
+      behavior: "smooth"
+    });
   }
 
   function navigate(dir) {
@@ -71,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   prevBtn.addEventListener("click", () => navigate(-1));
   nextBtn.addEventListener("click", () => navigate(1));
 
-  // Click outside image closes
+  // Click outside the image closes
   lightbox.addEventListener("click", (e) => {
     if (e.target === lightbox) closeLightbox();
   });
