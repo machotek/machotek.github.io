@@ -126,7 +126,7 @@
 }
 
 /* =========================
-   Mobile View (Compact Fit-Content Layout)
+   Mobile View (Dynamic Fit to Longest Header)
    ========================= */
 @media (max-width: 480px) {
   main,
@@ -142,13 +142,17 @@
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     padding: 12px;
+    display: inline-block; /* allows width to shrink to content */
   }
 
-  /* Header bars shrink to fit content */
+  /* Header bars share width based on longest label */
   .brand-docs h4,
   .doc-category h3 {
-    width: fit-content;
+    display: inline-flex;
+    width: 100%;
+    max-width: max-content; /* base on longest header */
     margin: 6px auto;
     padding: 10px 14px;
+    text-align: center;
   }
 }
