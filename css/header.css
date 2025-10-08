@@ -4,7 +4,7 @@ body {
   font-family: "Segoe UI", Arial, sans-serif;
   background-color: #fafafa;
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* --- Header --- */
@@ -22,7 +22,7 @@ body {
   z-index: 1000;
   flex-wrap: wrap;
   backdrop-filter: blur(5px);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.4s ease, color 0.4s ease, background 0.4s ease;
 }
 
 /* --- Left Logo --- */
@@ -41,6 +41,7 @@ body {
 .macho-logo {
   height: 50px;
   margin-bottom: 10px;
+  transition: filter 0.4s ease;
 }
 
 .header-text h1 {
@@ -62,6 +63,7 @@ body {
   color: white;
   font-weight: bold;
   padding: 5px 10px;
+  transition: color 0.3s ease;
 }
 
 .header-nav a:hover {
@@ -90,11 +92,12 @@ body {
   font-weight: bold;
   margin-top: 5px;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.4s ease, color 0.4s ease, transform 0.2s ease;
 }
 
 .theme-toggle:hover {
   background-color: #f1c40f;
+  transform: scale(1.05);
 }
 
 /* --- Hamburger Menu --- */
@@ -148,11 +151,13 @@ body {
 body.night-mode {
   background-color: #121212;
   color: #f0f0f0;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* Header adjustments */
 body.night-mode .site-header {
   background: rgba(30, 30, 30, 0.9);
+  color: #f0f0f0;
 }
 
 /* Links */
@@ -186,5 +191,5 @@ body.night-mode .theme-toggle:hover {
 /* Optional: images dim slightly for dark mode */
 body.night-mode img {
   filter: brightness(0.9);
-  transition: filter 0.3s;
+  transition: filter 0.4s ease;
 }
