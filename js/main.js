@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   // --- Disable right-click ---
-  document.addEventListener("contextmenu", event => event.preventDefault());
+  document.addEventListener("contextmenu", event => {
+    event.preventDefault();
+    alert("opsss no right click :)");
+  });
 
   // --- Load Header ---
   fetch('header.html')
