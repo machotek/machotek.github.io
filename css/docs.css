@@ -126,13 +126,13 @@
 }
 
 /* =========================
-   Mobile View (Card Layout)
+   Mobile View (Card Layout, Fixed Width)
    ========================= */
 @media (max-width: 480px) {
   main,
   .org-wrap,
   .docs-list {
-    max-width: 85%;
+    width: 200px;
     margin: 0 auto;
     padding: 0 8px;
   }
@@ -143,74 +143,3 @@
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     padding: 12px;
   }
-
-  .brand-docs h4,
-  .doc-category h3 {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    font-size: 1em;
-    padding: 8px 10px;
-    margin: 6px 0;
-    border-radius: 8px;
-    background-color: #fafafa;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  }
-
-  .brand-docs h4:hover,
-  .doc-category h3:hover {
-    background-color: #f0f0f0;
-  }
-
-  .toggle-icon {
-    margin-left: 0;
-  }
-
-  .doc-category ul {
-    padding: 0 10px;
-  }
-
-  .doc-category ul li {
-    font-size: 0.9em;
-    text-align: center;
-    background: #fff;
-    padding: 6px 0;
-    border-bottom: 1px solid #eee;
-  }
-
-  .doc-category ul li:last-child {
-    border-bottom: none;
-  }
-}
-
-/* =========================
-   Night Mode Support
-   ========================= */
-body.night-mode {
-  background-color: #121212;
-  color: #e5e5e5;
-}
-
-body.night-mode .docs-list {
-  background: #1e1e1e;
-  box-shadow: 0 2px 6px rgba(255,255,255,0.08);
-}
-
-body.night-mode .brand-docs h4,
-body.night-mode .doc-category h3 {
-  background-color: #2a2a2a;
-  color: #f0f0f0;
-  box-shadow: 0 1px 3px rgba(255,255,255,0.05);
-}
-
-body.night-mode .brand-docs h4:hover,
-body.night-mode .doc-category h3:hover {
-  background-color: #333;
-}
-
-body.night-mode .doc-category ul li {
-  background: #1e1e1e;
-  color: #ddd;
-  border-bottom: 1px solid #333;
-}
