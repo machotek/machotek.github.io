@@ -3,13 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch('header.html')
     .then(response => response.text())
     .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
+      const headerPlaceholder = document.getElementById('header-placeholder');
+      headerPlaceholder.innerHTML = data;
 
-      // ✅ Dynamically load header.js so theme toggle and hamburger work
-      const headerScript = document.createElement('script');
-      headerScript.src = 'js/header.js';
-      headerScript.defer = true;
-      document.body.appendChild(headerScript);
+      // Initialize interactions AFTER header is inserted
+      initHeader();
     })
     .catch(err => console.error('Error loading header:', err));
 
@@ -18,12 +16,38 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(response => response.text())
     .then(data => {
       document.getElementById('footer-placeholder').innerHTML = data;
-
-      // Optional: dynamically load footer.js if needed
-      const footerScript = document.createElement('script');
-      footerScript.src = 'js/footer.js';
-      footerScript.defer = true;
-      document.body.appendChild(footerScript);
     })
     .catch(err => console.error('Error loading footer:', err));
 });
+
+// --- Initialize header interactions ---
+function initHeader() {
+  const hamburger = document.getElementById("hamburger");
+  const nav = document.querySelector(".header-nav");
+  const themeToggle = document.getElementById("theme-toggle");
+
+  // --- Mobile menu toggle ---
+  if (hamburger && nav) {
+    hamburger.addEventListener("click", () => {
+      // Toggle active class to show/hide nav
+      nav.classList.toggle("active");
+    });
+  }
+
+  // --- Night/Day mode toggle ---
+  if (themeToggle) {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "night") {
+      document.body.classList.add("night-mode");
+      themeToggle.textContent = "☀️ Day Mode";
+    } else {
+      themeToggle.textContent = "🌙 Night Mode";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      const isNight = document.body.classList.toggle("night-mode");
+      themeToggle.textContent = isNight ? "☀️ Day Mode" : "🌙 Night Mode";
+      localStorage.setItem("theme", isNight ? "night" : "day");
+    });
+  }
+}

@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/header.css">
+<script src="js/main.js" defer></script>
 
 <header class="site-header">
   <!-- Left Logo -->
@@ -10,7 +11,9 @@
 
   <!-- Center Logo + Text -->
   <div class="header-center">
-    <img src="assets/macho.png" alt="Machotech Logo" class="macho-logo">
+    <a href="https://machotek.github.io/" target="_blank">
+      <img src="assets/macho.png" alt="Machotech Logo" class="macho-logo">
+    </a>
     <div class="header-text">
       <h1>Altamedica Incorporated</h1>
     </div>
@@ -24,15 +27,17 @@
     <a href="about.html">About</a>
   </nav>
 
-  <!-- Right Section -->
+  <!-- Right Section: Theme Toggle Only -->
   <div class="header-right">
-    <div class="contact-info">
-      <span>732-540-1230</span><br>
-      <span>info@altamedica.com.ph</span>
-    </div>
     <button id="theme-toggle" class="theme-toggle">🌙 Night Mode</button>
   </div>
 
   <!-- Hamburger (Mobile) -->
   <div class="hamburger" id="hamburger">&#9776;</div>
+  <nav class="header-nav">
+  <a href="index.html">Home</a>
+  <a href="docs.html">Docs</a>
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+</nav>
 </header>
