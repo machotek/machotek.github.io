@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Disable right-click ---
+  document.addEventListener("contextmenu", event => event.preventDefault());
+
   // --- Load Header ---
   fetch('header.html')
     .then(response => response.text())
