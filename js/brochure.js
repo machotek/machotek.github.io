@@ -1,19 +1,39 @@
 const track = document.querySelector('.carousel-track');
 const cards = Array.from(track.children);
-const dots = Array.from(document.querySelectorAll('.dot'));
+const dotsContainer = document.querySelector('.carousel-dots');
 
 let currentIndex = 0;
 
-// Touch variables
+// Touch/swipe variables
 let startX = 0;
 let endX = 0;
 
+// Generate dots dynamically based on number of cards
+cards.forEach((_, i) => {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (i === 0) dot.classList.add('active');
+  dotsContainer.appendChild(dot);
+});
+
+const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
+
+// Update carousel state
 function updateCarousel() {
   cards.forEach((card, i) => {
     card.classList.remove('active', 'prev', 'next');
     if (i === currentIndex) card.classList.add('active');
     else if (i === (currentIndex - 1 + cards.length) % cards.length) card.classList.add('prev');
     else if (i === (currentIndex + 1) % cards.length) card.classList.add('next');
+  });
+
+  // Enable click only for active card
+  cards.forEach(card => {
+    const link = card.querySelector('a');
+    if (link) {
+      link.style.pointerEvents = card.classList.contains('active') ? 'auto' : 'none';
+      link.style.cursor = card.classList.contains('active') ? 'pointer' : 'default';
+    }
   });
 
   // Center track
@@ -32,7 +52,7 @@ dots.forEach((dot, i) => {
   });
 });
 
-// Swipe events
+// Swipe events for touch devices
 track.addEventListener('touchstart', e => {
   startX = e.touches[0].clientX;
 });
@@ -55,5 +75,5 @@ track.addEventListener('touchend', () => {
   updateCarousel();
 });
 
-// Initialize
+// Initialize carousel
 updateCarousel();
