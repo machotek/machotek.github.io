@@ -117,3 +117,9 @@
   margin-top: 20px;
   order: 1; /* ensures dots appear below the track */
 }
+/* Disable pointer events for inactive cards */
+.carousel-card:not(.active) a {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.7; /* optional, visually indicate it's inactive */
+}
