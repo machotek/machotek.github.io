@@ -75,5 +75,16 @@ track.addEventListener('touchend', () => {
   updateCarousel();
 });
 
+// Keyboard navigation with arrow keys
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowLeft') {
+    currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+    updateCarousel();
+  } else if (e.key === 'ArrowRight') {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel();
+  }
+});
+
 // Initialize carousel
 updateCarousel();
