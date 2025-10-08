@@ -23,6 +23,7 @@
   display: flex;
   transition: transform 0.5s ease;
   gap: 20px;
+  padding: 0 40px;
 }
 
 .carousel-card {
@@ -79,8 +80,11 @@
   border-radius: 50%;
 }
 
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
+.arrow.left { left: 0; }
+.arrow.right { right: 0; }
+
+.arrow.left { left: -20px; }
+.arrow.right { right: -20px; }
 
 /* Dots */
 .carousel-dots {
@@ -99,4 +103,17 @@
 
 .carousel-dots .dot.active {
   background-color: #fff;
+}
+.carousel-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  flex-direction: column; /* ADD THIS to stack track and dots */
+}
+
+.carousel-dots {
+  margin-top: 20px;
+  order: 1; /* ensures dots appear below the track */
 }
