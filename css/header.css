@@ -139,7 +139,7 @@ body.night-mode {
 
 /* Header in dark mode */
 body.night-mode .site-header {
-  background: url('https://raw.githubusercontent.com/machotek/machotek.github.io/main/assets/header-night.jpg`)
+  background: url('https://raw.githubusercontent.com/machotek/machotek.github.io/main/assets/header-night.jpg')
               no-repeat center center;
   background-size: cover;
   color: #f0f0f0;
