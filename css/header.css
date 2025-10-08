@@ -139,8 +139,11 @@ body.night-mode {
 
 /* Header in dark mode */
 body.night-mode .site-header {
-  background: rgba(30, 30, 30, 0.9);
+  background: url('https://raw.githubusercontent.com/machotek/machotek.github.io/main/assets/header-night.jpg') 
+              no-repeat center center;
+  background-size: cover;
   color: #f0f0f0;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 /* Links in dark mode */
