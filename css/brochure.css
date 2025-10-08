@@ -80,12 +80,6 @@
   border-radius: 50%;
 }
 
-.arrow.left { left: 0; }
-.arrow.right { right: 0; }
-
-.arrow.left { left: -20px; }
-.arrow.right { right: -20px; }
-
 /* Dots */
 .carousel-dots {
   margin-top: 20px;

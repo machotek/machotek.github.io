@@ -1,7 +1,5 @@
 const track = document.querySelector('.carousel-track');
 const cards = Array.from(track.children);
-const nextBtn = document.querySelector('.arrow.right');
-const prevBtn = document.querySelector('.arrow.left');
 const dots = Array.from(document.querySelectorAll('.dot'));
 
 let currentIndex = 0;
@@ -25,17 +23,6 @@ function updateCarousel() {
   // Update dots
   dots.forEach((dot, i) => dot.classList.toggle('active', i === currentIndex));
 }
-
-// Arrow click events
-nextBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % cards.length;
-  updateCarousel();
-});
-
-prevBtn.addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + cards.length) % cards.length;
-  updateCarousel();
-});
 
 // Dot navigation
 dots.forEach((dot, i) => {
