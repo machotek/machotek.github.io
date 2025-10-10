@@ -97,8 +97,8 @@
    Collapsible List of Documents
    ========================= */
 .brand-content {
-  list-style: disc; /* show bullets */
-  padding-left: 20px;
+  list-style: none; /* custom bullets below */
+  padding-left: 0;
   margin: 8px 0;
   display: none; /* hidden by default */
 }
@@ -108,8 +108,18 @@
 }
 
 .brand-content li {
-  display: list-item;
+  display: flex;
+  align-items: center;
   margin: 6px 0;
+  transition: color 0.2s ease;
+}
+
+.brand-content li::before {
+  content: "•";
+  color: #0078d4; /* default bullet color */
+  font-weight: bold;
+  margin-right: 8px;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .brand-content a {
@@ -118,8 +128,14 @@
   transition: color 0.2s ease;
 }
 
-.brand-content a:hover {
-  color: #0078d4;
+/* Hover effect applies to both bullet + link */
+.brand-content li:hover::before {
+  color: #005fa3;
+  transform: scale(1.2); /* subtle grow animation */
+}
+
+.brand-content li:hover a {
+  color: #005fa3;
   text-decoration: underline;
 }
 
