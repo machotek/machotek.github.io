@@ -11,7 +11,7 @@
   border-radius: 8px;
   font-size: 1.25em;
   font-weight: 700;
-  color: #222; /* always black */
+  color: #222; /* always visible text */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,7 +33,7 @@
   transform: rotate(180deg);
 }
 
-/* --- Collapsible Content (inner wrapper) --- */
+/* --- Collapsible Content Wrapper --- */
 .section-content {
   display: none;
   margin-top: 8px;
@@ -59,7 +59,7 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 18px;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
-  color: #222; /* always black text */
+  color: #222;
 }
 
 .brand-card:hover {
@@ -72,7 +72,7 @@
 .brand-card h3 {
   cursor: pointer;
   font-size: 1.1em;
-  color: #222; /* always black */
+  color: #222;
   margin-bottom: 8px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
@@ -93,33 +93,32 @@
   transform: rotate(180deg);
 }
 
-/* --- Collapsible List of Documents --- */
-.brand-card ul,
+/* =========================
+   Collapsible List of Documents
+   ========================= */
 .brand-content {
-  list-style: none; /* remove bullets */
-  padding: 0;
-  margin: 0;
-  display: none;
+  list-style: disc; /* show bullets */
+  padding-left: 20px;
+  margin: 8px 0;
+  display: none; /* hidden by default */
 }
 
-.brand-card.active ul {
-  display: block;
+.brand-card.active .brand-content {
+  display: block; /* show when active */
 }
 
-.brand-card li,
 .brand-content li {
+  display: list-item;
   margin: 6px 0;
-  display: flex;
-  align-items: flex-start;
 }
 
-.brand-card a {
-  color: #222; /* always black */
+.brand-content a {
+  color: #222;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.brand-card a:hover {
+.brand-content a:hover {
   color: #0078d4;
   text-decoration: underline;
 }
@@ -153,7 +152,7 @@
 }
 
 /* =========================
-   Mobile View (Auto-Fit Width)
+   Mobile View (One Column)
    ========================= */
 @media (max-width: 480px) {
   main,
@@ -169,43 +168,16 @@
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     padding: 12px;
-    display: inline-block;
   }
 
   .brand-docs h4 {
     width: 100%;
-    max-width: max-content;
     margin: 6px auto;
     padding: 10px 14px;
     text-align: center;
   }
 
-  /* Mobile: single column for cards */
   .brand-cards {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* one column on mobile */
   }
-
-  /* Mobile: single column for document lists */
-  .brand-card ul,
-  .brand-content {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .brand-card li,
-  .brand-content li {
-    margin: 0;
-  }
-}
-
-/* --- Optional: nicer arrow rotation --- */
-.toggle-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.brand-docs.active > h4 .toggle-icon,
-.brand-card.active > h3 .toggle-icon {
-  transform: rotate(180deg);
 }
