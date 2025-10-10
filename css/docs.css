@@ -148,11 +148,10 @@
     padding: 10px 12px;
   }
 }
-
 /* =========================
    Mobile View (One Column)
    ========================= */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   main,
   .org-wrap,
   .docs-list {
@@ -176,6 +175,6 @@
   }
 
   .brand-cards {
-    grid-template-columns: 1fr; /* one column on mobile */
+    grid-template-columns: 1fr !important; /* Force one column */
   }
 }
