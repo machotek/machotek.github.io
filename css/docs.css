@@ -11,7 +11,7 @@
   border-radius: 8px;
   font-size: 1.25em;
   font-weight: 700;
-  color: #222; /* always visible text */
+  color: #222;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -97,46 +97,28 @@
    Collapsible List of Documents
    ========================= */
 .brand-content {
-  list-style: none; /* custom bullets below */
+  list-style: none;
   padding-left: 0;
   margin: 8px 0;
-  display: none; /* hidden by default */
+  display: none;
 }
 
 .brand-card.active .brand-content {
-  display: block; /* show when active */
+  display: block;
 }
 
 .brand-content li {
-  display: flex;
-  align-items: center;
   margin: 6px 0;
-  transition: color 0.2s ease;
-}
-
-.brand-content li::before {
-  content: "•";
-  color: #0078d4; /* default bullet color */
-  font-weight: bold;
-  margin-right: 8px;
-  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .brand-content a {
   color: #222;
-  text-decoration: none;
+  text-decoration: underline; /* always underlined */
   transition: color 0.2s ease;
 }
 
-/* Hover effect applies to both bullet + link */
-.brand-content li:hover::before {
+.brand-content a:hover {
   color: #005fa3;
-  transform: scale(1.2); /* subtle grow animation */
-}
-
-.brand-content li:hover a {
-  color: #005fa3;
-  text-decoration: underline;
 }
 
 /* =========================
