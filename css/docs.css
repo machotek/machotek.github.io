@@ -96,7 +96,7 @@
 /* --- Collapsible List of Documents --- */
 .brand-card ul,
 .brand-content {
-  list-style: none;
+  list-style: none; /* remove bullets */
   padding: 0;
   margin: 0;
   display: none;
@@ -111,13 +111,6 @@
   margin: 6px 0;
   display: flex;
   align-items: flex-start;
-}
-
-.brand-card li::before {
-  content: "•";
-  color: #0078d4;
-  margin-right: 6px;
-  font-weight: bold;
 }
 
 .brand-card a {
