@@ -11,7 +11,7 @@
   border-radius: 8px;
   font-size: 1.25em;
   font-weight: 700;
-  color: #222;
+  color: #222; /* force black text */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,11 +25,12 @@
 .toggle-icon {
   font-weight: bold;
   margin-left: 8px;
+  display: inline-block;
   transition: transform 0.3s ease;
 }
 
 .brand-docs.active > h4 .toggle-icon {
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
 }
 
 /* --- Collapsible Content (inner wrapper) --- */
@@ -53,23 +54,25 @@
 }
 
 .brand-card {
-  background: #fff;
+  background: linear-gradient(135deg, #ffffff 0%, #f2f2f2 100%);
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
   padding: 18px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  color: #222; /* always black text */
 }
 
 .brand-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  background: linear-gradient(135deg, #f9f9f9 0%, #e6e6e6 100%);
 }
 
 /* --- Brand Card Header --- */
 .brand-card h3 {
   cursor: pointer;
   font-size: 1.1em;
-  color: #0078d4;
+  color: #222; /* force black text */
   margin-bottom: 8px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 5px;
@@ -84,11 +87,10 @@
 
 .brand-card .toggle-icon {
   font-size: 0.9em;
-  transition: transform 0.3s ease;
 }
 
 .brand-card.active > h3 .toggle-icon {
-  transform: rotate(-180deg);
+  transform: rotate(180deg);
 }
 
 /* --- Collapsible List of Documents --- */
@@ -105,10 +107,19 @@
 
 .brand-card li {
   margin: 6px 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.brand-card li::before {
+  content: "•";
+  color: #0078d4;
+  margin-right: 6px;
+  font-weight: bold;
 }
 
 .brand-card a {
-  color: #222;
+  color: #222; /* always black */
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -177,28 +188,4 @@
   .brand-cards {
     grid-template-columns: 1fr;
   }
-}
-/* --- Bullet style for document list --- */
-.brand-card ul li::before {
-  content: "•";
-  color: #0078d4;
-  margin-right: 6px;
-  font-weight: bold;
-}
-
-/* Make sure custom bullet aligns nicely */
-.brand-card ul li {
-  display: flex;
-  align-items: flex-start;
-}
-
-/* Optional: nicer arrow icon rotation for toggle-icon text */
-.toggle-icon {
-  display: inline-block;
-  transition: transform 0.3s ease;
-}
-
-.brand-docs.active > h4 .toggle-icon,
-.brand-card.active > h3 .toggle-icon {
-  transform: rotate(180deg);
 }
