@@ -118,6 +118,7 @@
   font-weight: bold;
 }
 
+/* --- Links in Brand Cards --- */
 .brand-card a {
   color: #222; /* always black */
   text-decoration: none;
@@ -127,6 +128,18 @@
 .brand-card a:hover {
   color: #0078d4;
   text-decoration: underline;
+}
+
+/* --- Links in brand-content list (no hover effect) --- */
+.brand-content a {
+  color: #222; /* always black */
+  text-decoration: none;
+  transition: none; /* no hover transition */
+}
+
+.brand-content a:hover {
+  color: #222; /* keep black on hover */
+  text-decoration: none; /* no underline */
 }
 
 /* =========================
