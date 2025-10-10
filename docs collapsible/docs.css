@@ -1,0 +1,158 @@
+/* =========================
+   Brand & Classification Headers
+   ========================= */
+.brand-docs h4,
+.doc-category h3 {
+  cursor: pointer;
+  background-color: #f9f9f9;
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+}
+
+/* Hover effect */
+.brand-docs h4:hover,
+.doc-category h3:hover {
+  background-color: #eee;
+}
+
+/* Heading sizes */
+.brand-docs h4 {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #222;
+  margin: 12px 0;
+}
+
+.doc-category h3 {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #444;
+}
+
+/* Icon spacing */
+.toggle-icon {
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+/* =========================
+   Collapsible Logic
+   ========================= */
+.brand-docs .doc-category {
+  display: none;
+}
+
+.doc-category ul {
+  display: none;
+  margin: 0;
+  padding: 0 20px;
+}
+
+.doc-category ul li {
+  list-style: none;
+  margin: 4px 0;
+  padding: 4px 0;
+  font-size: 0.95em;
+  color: #333;
+}
+
+/* Show categories/lists when active */
+.brand-docs.active > .doc-category {
+  display: block;
+}
+
+.doc-category.active > ul {
+  display: block;
+}
+
+/* Plus/minus icons */
+.brand-docs > h4 .toggle-icon::before {
+  content: "+";
+}
+.brand-docs.active > h4 .toggle-icon::before {
+  content: "–";
+}
+
+.doc-category > h3 .toggle-icon::before {
+  content: "+";
+}
+.doc-category.active > h3 .toggle-icon::before {
+  content: "–";
+}
+
+/* =========================
+   Layout and Containers
+   ========================= */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+.org-wrap {
+  max-width: 1100px;
+  width: 100%;
+  margin: 30px auto;
+  padding: 0 16px;
+  text-align: left;
+}
+
+/* =========================
+   Tablet View
+   ========================= */
+@media (max-width: 768px) {
+  .brand-docs h4,
+  .doc-category h3 {
+    width: 100%;
+    font-size: 1.1em;
+    padding: 10px 12px;
+  }
+
+  .doc-category ul {
+    padding: 0 14px;
+  }
+}
+
+/* =========================
+   Mobile View (Dynamic Fit to Longest Header)
+   ========================= */
+@media (max-width: 480px) {
+  main,
+  .org-wrap,
+  .docs-list {
+    width: auto;
+    margin: 0 auto;
+    padding: 0 8px;
+  }
+
+  .docs-list {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 12px;
+    display: inline-block; /* allows width to shrink to content */
+  }
+
+  /* Header bars share width based on longest label */
+  .brand-docs h4,
+  .doc-category h3 {
+    display: inline-flex;
+    width: 100%;
+    max-width: max-content; /* base on longest header */
+    margin: 6px auto;
+    padding: 10px 14px;
+    text-align: center;
+  }
+}
